@@ -4,27 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>hexo小结 | Eyshine</title>
+  <title>ECMAScript | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 执行 hexo deploy 后,出现 error deployer not found:github 的错误解决办法：1$ npm install hexo-deployer-git --save
-之后执行deploy另：yaml语法要求严格，注意空格，冒号后面要有一个空格。
-2. 不显示日期markdown文件头部 noDate: &amp;quot;true&amp;quot;
-3. 关于litten">
+  <meta name="description" content="JavaScript 的核心 ECMAScript 描述了该语言的语法和基本对象；
+undefined和null的区别
+undefined 是声明了变量但未对其初始化时赋予该变量的值
+null 则用于表示尚未存在的对象（声明了未初始化 &amp;amp; 未声明),如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。八进制 十六进制 声明
+八进制字面量的首数字必须是 0，其后的数字可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo小结">
-<meta property="og:url" content="http://haoyaxin.github.io/hexo小结/index.html">
+<meta property="og:title" content="ECMAScript">
+<meta property="og:url" content="http://haoyaxin.github.io/ECMAScript/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="1. 执行 hexo deploy 后,出现 error deployer not found:github 的错误解决办法：1$ npm install hexo-deployer-git --save
-之后执行deploy另：yaml语法要求严格，注意空格，冒号后面要有一个空格。
-2. 不显示日期markdown文件头部 noDate: &amp;quot;true&amp;quot;
-3. 关于litten">
-<meta property="og:updated_time" content="2016-06-06T15:57:13.000Z">
+<meta property="og:description" content="JavaScript 的核心 ECMAScript 描述了该语言的语法和基本对象；
+undefined和null的区别
+undefined 是声明了变量但未对其初始化时赋予该变量的值
+null 则用于表示尚未存在的对象（声明了未初始化 &amp;amp; 未声明),如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。八进制 十六进制 声明
+八进制字面量的首数字必须是 0，其后的数字可">
+<meta property="og:updated_time" content="2016-06-10T09:37:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo小结">
-<meta name="twitter:description" content="1. 执行 hexo deploy 后,出现 error deployer not found:github 的错误解决办法：1$ npm install hexo-deployer-git --save
-之后执行deploy另：yaml语法要求严格，注意空格，冒号后面要有一个空格。
-2. 不显示日期markdown文件头部 noDate: &amp;quot;true&amp;quot;
-3. 关于litten">
+<meta name="twitter:title" content="ECMAScript">
+<meta name="twitter:description" content="JavaScript 的核心 ECMAScript 描述了该语言的语法和基本对象；
+undefined和null的区别
+undefined 是声明了变量但未对其初始化时赋予该变量的值
+null 则用于表示尚未存在的对象（声明了未初始化 &amp;amp; 未声明),如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。八进制 十六进制 声明
+八进制字面量的首数字必须是 0，其后的数字可">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -210,7 +213,13 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-hexo小结" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ECMAScript" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/ECMAScript/" class="article-date">
+  	<time datetime="2016-06-08T03:19:51.000Z" itemprop="datePublished">2016-06-08</time>
+</a>
+    </div>
   
   <div class="article-inner">
     
@@ -221,7 +230,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo小结
+      ECMAScript
     </h1>
   
 
@@ -237,15 +246,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误"><a href="#1-执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误" class="headerlink" title="1. 执行 hexo deploy 后,出现 error deployer not found:github 的错误"></a>1. 执行 hexo deploy 后,出现 error deployer not found:github 的错误</h3><p>解决办法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>之后执行deploy<br>另：yaml语法要求严格，注意空格，冒号后面要有一个空格。</p>
-<h3 id="2-不显示日期"><a href="#2-不显示日期" class="headerlink" title="2. 不显示日期"></a>2. 不显示日期</h3><p>markdown文件头部 <code>noDate: &quot;true&quot;</code></p>
-<h3 id="3-关于litten的主题"><a href="#3-关于litten的主题" class="headerlink" title="3. 关于litten的主题"></a>3. 关于litten的主题</h3><ol>
-<li>配置文件和css中的路径都是绝对路径，可优化。</li>
-<li>心疼litten= =博客下面简直成了小白重灾区= =</li>
-<li>边栏友情链接未修改</li>
-<li>边栏主页按钮浮动menu未修改</li>
-</ol>
+        <p><strong>JavaScript 的核心 ECMAScript 描述了该语言的语法和基本对象；</strong></p>
+<h3 id="undefined和null的区别"><a href="#undefined和null的区别" class="headerlink" title="undefined和null的区别"></a>undefined和null的区别</h3><ul>
+<li>undefined 是声明了变量但未对其初始化时赋予该变量的值</li>
+<li>null 则用于表示尚未存在的对象（声明了未初始化 &amp; 未声明),如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。<h3 id="八进制-十六进制-声明"><a href="#八进制-十六进制-声明" class="headerlink" title="八进制 十六进制 声明"></a>八进制 十六进制 声明</h3></li>
+<li>八进制字面量的首数字必须是 0，其后的数字可以是任何八进制数字（0-7）</li>
+<li>首位数字必须为 0，后面接字母 x，然后是任意的十六进制数字（0 到 9 和 A 到 F）<br><em>尽管所有整数都可以表示为八进制或十六进制的字面量，但所有数学运算返回的都是十进制结果。</em><h3 id="number"><a href="#number" class="headerlink" title="number"></a>number</h3></li>
+<li>isFinite() 方法，判断数是有穷的</li>
+<li>NaN，表示非数（Not a Number）。一般说来，这种情况发生在类型（String、Boolean 等）转换失败时。它与自身不相等，所以不推荐使用 NaN 值本身，而是使用函数 isNaN()。<h3 id="number类型toString"><a href="#number类型toString" class="headerlink" title="number类型toString()"></a>number类型toString()</h3></li>
+<li>默认模式：用相应的字符串输出数字值（无论是整数、浮点数还是科学计数法）</li>
+<li>基模式：用不同的基输出数字，例如二进制的基是 2，八进制的基是 8，十六进制的基是 16。<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3></li>
+<li>Boolean(value) - 把给定的值转换成 Boolean 型；如果该值是空字符串、数字 0、undefined 或 null，它将返回 false。</li>
+<li>Number(value) - 把给定的值转换成数字（可以是整数或浮点数）；转换的是整个值，而不是部分值。</li>
+<li>String(value) - 把给定的值转换成字符串；把任何值转换成字符串。<h3 id="slice-和-substring"><a href="#slice-和-substring" class="headerlink" title="slice() 和 substring()"></a>slice() 和 substring()</h3>对于负数参数时两个函数是不同的</li>
+<li>slice() 方法会用字符串的长度加上参数</li>
+<li>substring() 方法则将其作为 0 处理（也就是说将忽略它）<h3 id="左移运算、有符号右移运算、无符号右移运算"><a href="#左移运算、有符号右移运算、无符号右移运算" class="headerlink" title="左移运算、有符号右移运算、无符号右移运算"></a>左移运算、有符号右移运算、无符号右移运算</h3></li>
+<li>左移运算： &lt;&lt; 左移运算用 0 填充这些空位;</li>
+<li>有符号右移运算： &gt;&gt; 保留该数的符号（正号或负号）；</li>
+<li>无符号右移运算：&gt;&gt;&gt; 无符号右移运算用 0 填充所有空位。负数的无符号右移运算得到的总是一个非常大的数字。<br>逻辑右移就是不考虑符号位，右移一位，左边补零即可。<br>算术右移需要考虑符号位，右移一位，若符号位为1，就在左边补1,；否则，就补0。<br>所以算术右移也可以进行有符号位的除法，右移n位就等于除2的n次方。<br>例如，8位二进制数11001101分别右移一位。<br>逻辑右移就是[0]1100110<br>算术右移就是[1]1100110<h3 id="AND-OR运算"><a href="#AND-OR运算" class="headerlink" title="AND OR运算"></a>AND OR运算</h3>如果某个运算数是 undefined，发生错误。</li>
+</ul>
 
       
     </div>
@@ -255,15 +274,20 @@
     
 <nav id="article-nav">
   
-    <a href="/读餐饮众筹的感想/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/APP的设计理念/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          读餐饮众筹的感想
+          APP的设计理念
         
       </div>
     </a>
   
+  
+    <a href="/RSS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RSS</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
