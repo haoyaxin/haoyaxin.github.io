@@ -4,17 +4,33 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | Eyshine</title>
+  <title>浏览器内核 | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="踏实一些 谦虚一些 努力多一些">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Eyshine">
-<meta property="og:url" content="http://haoyaxin.github.io/archives/page/2/index.html">
+  <meta name="description" content="浏览器的内核引擎，基本上是四分天下：
+
+Trident: IE 以Trident 作为内核引擎;
+Gecko: Firefox 是基于 Gecko 开发;
+WebKit: Safari, Google Chrome,傲游3,猎豹浏览器,百度浏览器 opera浏览器 基于 Webkit 开发。
+Presto: Opera的内核，但由于市场选择问题，主要应用在手机平台–Opera mini注：2013">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器内核">
+<meta property="og:url" content="http://haoyaxin.github.io/浏览器内核/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="踏实一些 谦虚一些 努力多一些">
+<meta property="og:description" content="浏览器的内核引擎，基本上是四分天下：
+
+Trident: IE 以Trident 作为内核引擎;
+Gecko: Firefox 是基于 Gecko 开发;
+WebKit: Safari, Google Chrome,傲游3,猎豹浏览器,百度浏览器 opera浏览器 基于 Webkit 开发。
+Presto: Opera的内核，但由于市场选择问题，主要应用在手机平台–Opera mini注：2013">
+<meta property="og:updated_time" content="2016-06-13T08:02:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eyshine">
-<meta name="twitter:description" content="踏实一些 谦虚一些 努力多一些">
+<meta name="twitter:title" content="浏览器内核">
+<meta name="twitter:description" content="浏览器的内核引擎，基本上是四分天下：
+
+Trident: IE 以Trident 作为内核引擎;
+Gecko: Firefox 是基于 Gecko 开发;
+WebKit: Safari, Google Chrome,傲游3,猎豹浏览器,百度浏览器 opera浏览器 基于 Webkit 开发。
+Presto: Opera的内核，但由于市场选择问题，主要应用在手机平台–Opera mini注：2013">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -200,215 +216,104 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-浏览器内核" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/浏览器内核/" class="article-date">
+  	<time datetime="2016-06-13T06:39:35.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浏览器内核
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Sketch3用户手册学习/" class="archive-article-date">
-  	<time datetime="2016-06-06T15:38:30.000Z" itemprop="datePublished">Jun 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Sketch3用户手册学习/">Sketch3用户手册学习</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>浏览器的内核引擎，基本上是四分天下：</p>
+<ul>
+<li>Trident: IE 以Trident 作为内核引擎;</li>
+<li>Gecko: Firefox 是基于 Gecko 开发;</li>
+<li>WebKit: Safari, Google Chrome,傲游3,猎豹浏览器,百度浏览器 opera浏览器 基于 Webkit 开发。</li>
+<li>Presto: Opera的内核，但由于市场选择问题，主要应用在手机平台–Opera mini<br>注：2013年2月Opera宣布转向WebKit引擎<br>注：2013年4月Opera宣布放弃WEBKIT，跟随GOOGLE的新开发的blink引擎</li>
+</ul>
+<h2 id="CSS上浏览器兼容："><a href="#CSS上浏览器兼容：" class="headerlink" title="CSS上浏览器兼容："></a>CSS上浏览器兼容：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-moz-   /* Firefox */</span><br><span class="line">-webkit-  /* Safari and Chrome */</span><br><span class="line">-o-  /* Opera */</span><br><span class="line">-ms-  /* IE 9 */</span><br></pre></td></tr></table></figure>
+<h3 id="浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同"><a href="#浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同" class="headerlink" title="浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同"></a>浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同</h3><p>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>碰到频率:100%<br>解决方案：CSS里<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;margin:0;padding:0;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>备注：这个是最常见的也是最易解决的一个浏览器兼容性问题，几乎所有的CSS文件开头都会用通配符*来设置各个标签的内外补丁是0。</p>
+<h3 id="浏览器兼容问题五：图片默认有间距"><a href="#浏览器兼容问题五：图片默认有间距" class="headerlink" title="浏览器兼容问题五：图片默认有间距"></a>浏览器兼容问题五：图片默认有间距</h3><p>问题症状：几个img标签放在一起的时候，有些浏览器会有默认的间距，加了问题一中提到的通配符也不起作用。<br>碰到几率：20%<br>解决方案：使用float属性为img布局<br>备注：因为img标签是行内属性标签，所以只要不超出容器宽度，img标签都会排在一行里，但是部分浏览器的img标签之间会有个间距。去掉这个间距使用float是正道。负margin本身就是容易引起浏览器兼容问题的用法，禁止使用</p>
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/CSS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CSS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015年更新的语言和框架们/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2015年更新的语言和框架们</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/《人人都是产品经理》/" class="archive-article-date">
-  	<time datetime="2016-06-06T15:26:01.000Z" itemprop="datePublished">Jun 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/《人人都是产品经理》/">《人人都是产品经理》</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/《腾讯方法》——手游/" class="archive-article-date">
-  	<time datetime="2016-06-06T15:17:18.000Z" itemprop="datePublished">Jun 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/《腾讯方法》——手游/">《腾讯方法》——手游</a>
-    </h1>
-  
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/《腾讯方法》——QQ会员/" class="archive-article-date">
-  	<time datetime="2016-06-06T15:11:36.000Z" itemprop="datePublished">Jun 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/《腾讯方法》——QQ会员/">《腾讯方法》——QQ会员</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Markdown/" class="archive-article-date">
-  	<time datetime="2016-06-06T04:44:16.000Z" itemprop="datePublished">Jun 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Markdown/">Markdown</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/读餐饮众筹的感想/" class="archive-article-date">
-  	<time datetime="2016-06-06T04:36:43.000Z" itemprop="datePublished">Jun 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/读餐饮众筹的感想/">读餐饮众筹的感想</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/hexo小结/" class="archive-article-date">
-  	<time datetime="2016-06-06T04:32:19.000Z" itemprop="datePublished">Jun 6</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/hexo小结/">hexo小结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 </div>
       <footer id="footer">
@@ -434,8 +339,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
