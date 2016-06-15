@@ -231,9 +231,10 @@
         <p>#基础</p>
 <h3 id="样式规则优先顺序"><a href="#样式规则优先顺序" class="headerlink" title="样式规则优先顺序"></a>样式规则优先顺序</h3><p>HTML元素内部内联 &gt; head标签内部内联 &gt; 外部样式表 &gt; 浏览器缺省设置</p>
 <h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ol>
-<li>id选择器<code>div#sidebar{} &lt;div id=&quot;sidebar&quot;&gt;</code></li>
-<li>类选择器<code>td.fancy{} &lt;td class=&quot;fancy&quot;&gt;</code></li>
-<li>属性选择器</li>
+<li>id选择器<code>div#sidebar{} &lt;div id=&quot;sidebar&quot;&gt;</code><br>区分大小写</li>
+<li>类选择器<code>td.fancy{} &lt;td class=&quot;fancy&quot;&gt;</code><br>两个类选择器链接在一起，选择同时包含这些类名的元素（类名的顺序不限）。<br>区分大小写</li>
+<li>属性选择器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[href][title] &#123;&#125;</span><br><span class="line">a[href=<span class="string">"http://www.w3school.com.cn/"</span>][title=<span class="string">"W3School"</span>]</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <table>
 <thead>
@@ -273,6 +274,19 @@
 </tr>
 </tbody>
 </table>
+<ol>
+<li>通配选择器 <code>*</code> 该选择器可以与任何元素匹配，就像是一个通配符。</li>
+<li>后代选择器（包含选择器）<ul>
+<li>中间有空格</li>
+</ul>
+</li>
+<li>子元素选择器<br>h1&gt;strong空格可选，表示h1 元素子元素的所有 strong 元素</li>
+<li><p>相邻兄弟选择器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 + p &#123;margin-top:50px;&#125;</span><br></pre></td></tr></table></figure>
+<p>选择紧接在 h1 元素后出现的p，h1 和 p 元素拥有共同的父元素</p>
+</li>
+<li>伪类<br>| 属性        | 描述           |<br>| ————- |:————-:|<br>| :active    | 向被激活的元素添加样式。|<br>| :focus    | 向拥有键盘输入焦点的元素添加样式。|<br>| :hover    | 当鼠标悬浮在元素上方时，向元素添加样式。|<br>| :link    | 向未被访问的链接添加样式。|<br>| :visited    | 向已被访问的链接添加样式。|<br>| :first-child    | 向元素的第一个子元素添加样式。|<br>| :lang    | 向带有指定 lang 属性的元素添加样式。|</li>
+</ol>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
 <li>所有背景属性都不能继承，默认是透明。</li>
 <li>百分数值同时应用于元素和图像。也就是说，图像中描述为 50% 50% 的点（中心点）与元素中描述为 50% 50% 的点（中心点）对齐。</li>
