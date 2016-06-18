@@ -202,6 +202,70 @@
 
       <div class="body-wrap">
   
+    <article id="post-css3之box-sizing" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/css3之box-sizing/" class="article-date">
+  	<time datetime="2016-06-18T18:11:40.000Z" itemprop="datePublished">2016-06-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/css3之box-sizing/">css3之box-sizing</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing ： content-box || border-box || inherit</span><br></pre></td></tr></table></figure>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul>
+<li>content-box：此值为其默认值，其让元素维持W3C的标准Box Model。<br>也就是说元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度 /高度（content width/height）<br>即：<strong>Element Width/Height = border + padding + content width/height</strong>。</li>
+<li>border-box:此值让元素维持IE传统的Box Model（IE6以下版本）。<br>也就是说元素的宽度/高度等于元素内容的宽度/高度。这里的content width/height包含了元素的border,padding,内容的width/height。<br>即：<strong>此处的内容宽度/高度=width /height-border-padding</strong>。</li>
+</ul>
+<p>在实际应用中，该属性有个非常有用的地方，即根据百分比为元素设置宽度时。此时，如果元素有padding或者border，将box-sizing设置为border-box会非常有用。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;Page title&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1 class=<span class="string">"hello-world"</span>&gt;1&lt;/h1&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;h1 class=<span class="string">"hello-world"</span>&gt;2&lt;/h1&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>该例子中，</p>
+<ul>
+<li>2情况下，li一定不能保持在同一行内。</li>
+<li>1情况设置了box-sizing：border-box之后，就可以保证li在同一行内。（IE8+和高级浏览器支持）</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-http-equiv" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1115,63 +1179,6 @@
       
         <p class="article-more-link">
           <a  href="/AJAX基础知识/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-HTML-DOM散落的知识点" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/HTML-DOM散落的知识点/" class="article-date">
-  	<time datetime="2016-06-07T14:00:41.000Z" itemprop="datePublished">2016-06-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/HTML-DOM散落的知识点/">HTML-DOM散落的知识点</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基础的基础"><a href="#基础的基础" class="headerlink" title="基础的基础"></a>基础的基础</h1><p>document 根节点<br>document.documentElement - 全部文档<br>document.body - 文档的主体</p>
-<h3 id="nodeName-属性"><a href="#nodeName-属性" class="headerlink" title="nodeName 属性"></a>nodeName 属性</h3><p>nodeName 属性规定节点的名称。<br>nodeName 是只读的<br>元素节点的 nodeName 与标签名相同<br>属性节点的 nodeName 与属性名相同<br>文本节点的 nodeName 始终是 #text<br>文档节点的 nodeName 始终是 #document<br><em>注释：nodeName 始终包含 HTML 元素的大写字母标签名。</em><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/HTML-DOM散落的知识点/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
