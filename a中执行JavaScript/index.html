@@ -4,24 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>css3之box-sizing | Eyshine</title>
+  <title>a中执行JavaScript | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="语法1box-sizing ： content-box || border-box || inherit
-参数
-content-box：此值为其默认值，其让元素维持W3C的标准Box Model。也就是说元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度 /高度（content width/height）即：Element">
+  <meta name="description" content="w3school 解释 标签的 href 属性用于指定超链接目标的 URL。href 属性的值可以是任何有效文档的相对或绝对 URL，包括片段标识符和 JavaScript 代码段。如果用户选择了  标签中的内容，那么浏览器会尝试检索并显示 href 属性指定的 URL 所表示的文档，或者执行 JavaScript 表达式、方法和函数的列表。
+在a中调用JavaScript的几种方法及优劣比较a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css3之box-sizing">
-<meta property="og:url" content="http://haoyaxin.github.io/css3之box-sizing/index.html">
+<meta property="og:title" content="a中执行JavaScript">
+<meta property="og:url" content="http://haoyaxin.github.io/a中执行JavaScript/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="语法1box-sizing ： content-box || border-box || inherit
-参数
-content-box：此值为其默认值，其让元素维持W3C的标准Box Model。也就是说元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度 /高度（content width/height）即：Element">
-<meta property="og:updated_time" content="2016-06-18T18:26:36.000Z">
+<meta property="og:description" content="w3school 解释 标签的 href 属性用于指定超链接目标的 URL。href 属性的值可以是任何有效文档的相对或绝对 URL，包括片段标识符和 JavaScript 代码段。如果用户选择了  标签中的内容，那么浏览器会尝试检索并显示 href 属性指定的 URL 所表示的文档，或者执行 JavaScript 表达式、方法和函数的列表。
+在a中调用JavaScript的几种方法及优劣比较a">
+<meta property="og:updated_time" content="2016-06-21T13:35:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css3之box-sizing">
-<meta name="twitter:description" content="语法1box-sizing ： content-box || border-box || inherit
-参数
-content-box：此值为其默认值，其让元素维持W3C的标准Box Model。也就是说元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度 /高度（content width/height）即：Element">
+<meta name="twitter:title" content="a中执行JavaScript">
+<meta name="twitter:description" content="w3school 解释 标签的 href 属性用于指定超链接目标的 URL。href 属性的值可以是任何有效文档的相对或绝对 URL，包括片段标识符和 JavaScript 代码段。如果用户选择了  标签中的内容，那么浏览器会尝试检索并显示 href 属性指定的 URL 所表示的文档，或者执行 JavaScript 表达式、方法和函数的列表。
+在a中调用JavaScript的几种方法及优劣比较a">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -207,11 +204,11 @@ content-box：此值为其默认值，其让元素维持W3C的标准Box Model。
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-css3之box-sizing" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-a中执行JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/css3之box-sizing/" class="article-date">
-  	<time datetime="2016-06-18T18:11:40.000Z" itemprop="datePublished">2016-06-19</time>
+      <a href="/a中执行JavaScript/" class="article-date">
+  	<time datetime="2016-06-21T13:27:13.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
   
@@ -224,7 +221,7 @@ content-box：此值为其默认值，其让元素维持W3C的标准Box Model。
         
   
     <h1 class="article-title" itemprop="name">
-      css3之box-sizing
+      a中执行JavaScript
     </h1>
   
 
@@ -240,18 +237,16 @@ content-box：此值为其默认值，其让元素维持W3C的标准Box Model。
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing ： content-box || border-box || inherit</span><br></pre></td></tr></table></figure>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul>
-<li>content-box：此值为其默认值，其让元素维持W3C的标准Box Model。<br>也就是说元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度 /高度（content width/height）<br>即：<strong>Element Width/Height = border + padding + content width/height</strong>。</li>
-<li>border-box:此值让元素维持IE传统的Box Model（IE6以下版本）。<br>也就是说元素的宽度/高度等于元素内容的宽度/高度。这里的content width/height包含了元素的border,padding,内容的width/height。<br>即：<strong>此处的内容宽度/高度=width /height-border-padding</strong>。</li>
-</ul>
-<p>在实际应用中，该属性有个非常有用的地方，即根据百分比为元素设置宽度时。此时，如果元素有padding或者border，将box-sizing设置为border-box会非常有用。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;Page title&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1 class=<span class="string">"hello-world"</span>&gt;1&lt;/h1&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;h1 class=<span class="string">"hello-world"</span>&gt;2&lt;/h1&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>该例子中，</p>
-<ul>
-<li>2情况下，li一定不能保持在同一行内。</li>
-<li>1情况设置了box-sizing：border-box之后，就可以保证li在同一行内。（IE8+和高级浏览器支持）</li>
-</ul>
+        <h3 id="w3school-解释"><a href="#w3school-解释" class="headerlink" title="w3school 解释"></a>w3school 解释</h3><p><a> 标签的 href 属性用于指定超链接目标的 URL。<br>href 属性的值可以是任何有效文档的相对或绝对 URL，包括片段标识符和 JavaScript 代码段。如果用户选择了 <a> 标签中的内容，那么浏览器会尝试检索并显示 href 属性指定的 URL 所表示的文档，或者执行 JavaScript 表达式、方法和函数的列表。</a></a></p>
+<h2 id="在a中调用JavaScript的几种方法及优劣比较"><a href="#在a中调用JavaScript的几种方法及优劣比较" class="headerlink" title="在a中调用JavaScript的几种方法及优劣比较"></a>在a中调用JavaScript的几种方法及优劣比较</h2><h3 id="a-href-”JavaScript-js-method-”"><a href="#a-href-”JavaScript-js-method-”" class="headerlink" title="a href=”JavaScript:js_method();”"></a>a href=”JavaScript:js_method();”</h3><p>常用方法，但是这种方法在传递this等参数的时候很容易出问题，而且javascript:协议作为a的href属性的时候不仅会导致不必要的触发window.onbeforeunload事件，在IE里面更会使gif动画图片停止播放。<strong>W3C标准不推荐在href里面执行javascript语句。</strong></p>
+<h3 id="a-href-”javascript-void-0-”-onclick-”js-method-”-（推荐）"><a href="#a-href-”javascript-void-0-”-onclick-”js-method-”-（推荐）" class="headerlink" title="a href=”javascript:void(0);” onclick=”js_method()” （推荐）"></a>a href=”javascript:void(0);” onclick=”js_method()” （推荐）</h3><p>最常用的方法&amp;最周全的方法，onclick方法负责执行js函数，而void是一个操作符，void(0)返回undefined，地址不发生跳转。而且这种方法不会像第一种方法一样直接将js方法暴露在浏览器的状态栏。</p>
+<h3 id="a-href-”javascript-”-onclick-”js-method-”-（推荐）"><a href="#a-href-”javascript-”-onclick-”js-method-”-（推荐）" class="headerlink" title="a href=”javascript:;” onclick=”js_method()” （推荐）"></a>a href=”javascript:;” onclick=”js_method()” （推荐）</h3><p>这种方法跟跟2种类似，区别只是执行了一条空的js代码。</p>
+<h3 id="其他两个奇怪的方法"><a href="#其他两个奇怪的方法" class="headerlink" title="其他两个奇怪的方法"></a>其他两个奇怪的方法</h3><ol>
+<li><p>a href=”#” onclick=”js_method()”<br>这种方法也是网上很常见的代码，#是标签内置的一个方法，代表top的作用。所以用这种方法点击后网页后返回到页面的最顶端。</p>
+</li>
+<li><p>a href=”#” onclick=”js_method();return false;”<br>这种方法点击执行了js函数后return false，页面不发生跳转，执行后还是在页面的当前位置。</p>
+</li>
+</ol>
 
       
     </div>
@@ -261,18 +256,9 @@ content-box：此值为其默认值，其让元素维持W3C的标准Box Model。
     
 <nav id="article-nav">
   
-    <a href="/a中执行JavaScript/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          a中执行JavaScript
-        
-      </div>
-    </a>
   
-  
-    <a href="/http-equiv/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">http-equiv</div>
+    <a href="/css3之box-sizing/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css3之box-sizing</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
