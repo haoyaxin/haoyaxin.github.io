@@ -4,18 +4,42 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>日记20160622 | Eyshine</title>
+  <title>angularjs工作机制 | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。不想认输，只想成功。">
+  <meta name="description" content="了解angularjs的工作机制有助于不掉坑
+AngularJS是如何渲染出一个页面当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：
+
+加载html，然后解析成DOM；
+加载angular.js脚本；
+AngularJS等待DOMContentLoaded事件的触发；
+AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；
+使用ng-app中指定的模块配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日记20160622">
-<meta property="og:url" content="http://haoyaxin.github.io/日记20160622/index.html">
+<meta property="og:title" content="angularjs工作机制">
+<meta property="og:url" content="http://haoyaxin.github.io/angularjs工作机制/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。不想认输，只想成功。">
-<meta property="og:updated_time" content="2016-06-22T14:44:37.000Z">
+<meta property="og:description" content="了解angularjs的工作机制有助于不掉坑
+AngularJS是如何渲染出一个页面当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：
+
+加载html，然后解析成DOM；
+加载angular.js脚本；
+AngularJS等待DOMContentLoaded事件的触发；
+AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；
+使用ng-app中指定的模块配">
+<meta property="og:image" content="http://haoyaxin.github.io/img/angularjs工作机制/1.jpg">
+<meta property="og:image" content="http://haoyaxin.github.io/img/angularjs工作机制/2.jpg">
+<meta property="og:updated_time" content="2016-06-22T15:40:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日记20160622">
-<meta name="twitter:description" content="连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。不想认输，只想成功。">
+<meta name="twitter:title" content="angularjs工作机制">
+<meta name="twitter:description" content="了解angularjs的工作机制有助于不掉坑
+AngularJS是如何渲染出一个页面当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：
+
+加载html，然后解析成DOM；
+加载angular.js脚本；
+AngularJS等待DOMContentLoaded事件的触发；
+AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；
+使用ng-app中指定的模块配">
+<meta name="twitter:image" content="http://haoyaxin.github.io/img/angularjs工作机制/1.jpg">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -201,11 +225,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-日记20160622" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-angularjs工作机制" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/日记20160622/" class="article-date">
-  	<time datetime="2016-06-22T14:40:48.000Z" itemprop="datePublished">2016-06-22</time>
+      <a href="/angularjs工作机制/" class="article-date">
+  	<time datetime="2016-06-22T15:13:28.000Z" itemprop="datePublished">2016-06-22</time>
 </a>
     </div>
   
@@ -218,7 +242,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      日记20160622
+      angularjs工作机制
     </h1>
   
 
@@ -234,7 +258,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。<br>被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。<br>之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。<br>不想认输，只想成功。</p>
+        <p>了解angularjs的工作机制有助于不掉坑</p>
+<h3 id="AngularJS是如何渲染出一个页面"><a href="#AngularJS是如何渲染出一个页面" class="headerlink" title="AngularJS是如何渲染出一个页面"></a>AngularJS是如何渲染出一个页面</h3><p>当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：</p>
+<ol>
+<li>加载html，然后解析成DOM；</li>
+<li>加载angular.js脚本；</li>
+<li>AngularJS等待DOMContentLoaded事件的触发；</li>
+<li>AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；</li>
+<li>使用ng-app中指定的模块配置$injector；</li>
+<li>使用injector创建compile服务和$rootScope；</li>
+<li>使用compile服务编译DOM并把它链接到rootScope上；</li>
+<li>ng-init指令对scope里面的变量xxx进行赋值；</li>
+<li>对表达式进行替换<br>整个过程可以用这张图来表示：<br><img src="/img/angularjs工作机制/1.jpg" alt="img"></li>
+</ol>
+<h3 id="AngularJS如何和浏览器的事件回路-用户-来交互"><a href="#AngularJS如何和浏览器的事件回路-用户-来交互" class="headerlink" title="AngularJS如何和浏览器的事件回路(用户)来交互"></a>AngularJS如何和浏览器的事件回路(用户)来交互</h3><ol>
+<li>浏览器的事件回路一直等待着事件的触发，事件包括用户的交互操作、定时事件或者网络事件（如服务器的响应等）；</li>
+<li>一旦有事件触发，就会进入到Javascript的context中，一般通过回调函数来修改DOM；</li>
+<li><p>等到回调函数执行完毕之后，浏览器又根据新的DOM来渲染新的页面。<br>AngularJS修改了一般的Javascript工作流，并且提供了它自己的事件处理机制。<br>这样就把Javascript的context分隔成两部分，一部分是原生的Javascript的context，另一部分是AngularJS的context。<br><strong>只有处在AngularJS的context中的操作才能享受到Angular的data-binding、exception handling、property watching等服务，</strong><br>但是对于外来者（如原生的Javascript操作、自定义的事件回调、第三方的库等）Angular也不是一概不接见，<strong>可以使用AngularJS提供的$apply()函数</strong> 将这些外来者包进AngularJS的context中，让Angular感知到他们产生的变化。</p>
+<p>正如下面一张图所示，交互过程主要由几个循环组成：<br><img src="/img/angularjs工作机制/2.jpg" alt="img"></p>
+</li>
+</ol>
+<p><strong>交互过程中的这几个循环是怎么工作的：</strong></p>
+<ol>
+<li>首先，浏览器会一直处于监听状态，一旦有事件被触发，就会被加到一个event queue中，event queue中的事件会一个一个的执行。</li>
+<li>event queue中的事件如果是被$apply()包起来的话，就会进入到AngularJS的context中，这里的fn()是我们希望在AngularJS的context中执行的函数。</li>
+<li>AngularJS将执行fn()函数，通常情况下，这个函数会改变应用的某些状态。</li>
+<li>然后AngularJS会进入到由两个小循环组成的digest循环中，一个循环是用来处理evalAsync队列（用来schedule一些需要在渲染视图之前处理的操作，通常通过setTimeout(0)实现，速度会比较慢，可能会出现视图抖动的问题）的，一个循环是处理watch列表（是一些表达式的集合，一旦有改变发生，那么watch函数就会被调用）的。digest循环会一直迭代直到evalAsync队列为空并且$watch列表也为空的时候，即model不再有任何变化。</li>
+<li>一旦AngularJS的$digest循环结束，整个执行就会离开AngularJS和Javascript的context，紧接着浏览器就会把数据改变后的视图重新渲染出来。</li>
+</ol>
+<p>来源：<a href="http://www.cnblogs.com/penghongwei/p/3444601.html" target="_blank" rel="external">http://www.cnblogs.com/penghongwei/p/3444601.html</a></p>
 
       
     </div>
@@ -244,18 +296,18 @@
     
 <nav id="article-nav">
   
-    <a href="/angularjs工作机制/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/浏览器渲染页面的过程/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          angularjs工作机制
+          浏览器渲染页面的过程
         
       </div>
     </a>
   
   
-    <a href="/a中执行JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">a中执行JavaScript</div>
+    <a href="/日记20160622/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日记20160622</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

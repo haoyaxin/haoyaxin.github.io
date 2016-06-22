@@ -4,18 +4,36 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>日记20160622 | Eyshine</title>
+  <title>浏览器渲染页面的过程 | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。不想认输，只想成功。">
+  <meta name="description" content="浏览器的渲染过程
+浏览器解析html源码，然后创建一个 DOM树。
+浏览器解析CSS代码，计算出最终的样式数据。
+构建一个渲染树（rendering tree）。渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。一大段文本中的每一个行在渲染树中都是独立的一个节点。渲染树中的每一个节点都存储有对应的css属性。
+浏览器就根据渲染树直接把页面绘制到屏幕上。
+
+重绘和重排（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日记20160622">
-<meta property="og:url" content="http://haoyaxin.github.io/日记20160622/index.html">
+<meta property="og:title" content="浏览器渲染页面的过程">
+<meta property="og:url" content="http://haoyaxin.github.io/浏览器渲染页面的过程/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。不想认输，只想成功。">
-<meta property="og:updated_time" content="2016-06-22T14:44:37.000Z">
+<meta property="og:description" content="浏览器的渲染过程
+浏览器解析html源码，然后创建一个 DOM树。
+浏览器解析CSS代码，计算出最终的样式数据。
+构建一个渲染树（rendering tree）。渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。一大段文本中的每一个行在渲染树中都是独立的一个节点。渲染树中的每一个节点都存储有对应的css属性。
+浏览器就根据渲染树直接把页面绘制到屏幕上。
+
+重绘和重排（">
+<meta property="og:updated_time" content="2016-06-22T15:38:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日记20160622">
-<meta name="twitter:description" content="连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。不想认输，只想成功。">
+<meta name="twitter:title" content="浏览器渲染页面的过程">
+<meta name="twitter:description" content="浏览器的渲染过程
+浏览器解析html源码，然后创建一个 DOM树。
+浏览器解析CSS代码，计算出最终的样式数据。
+构建一个渲染树（rendering tree）。渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。一大段文本中的每一个行在渲染树中都是独立的一个节点。渲染树中的每一个节点都存储有对应的css属性。
+浏览器就根据渲染树直接把页面绘制到屏幕上。
+
+重绘和重排（">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -201,11 +219,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-日记20160622" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-浏览器渲染页面的过程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/日记20160622/" class="article-date">
-  	<time datetime="2016-06-22T14:40:48.000Z" itemprop="datePublished">2016-06-22</time>
+      <a href="/浏览器渲染页面的过程/" class="article-date">
+  	<time datetime="2016-06-22T15:30:50.000Z" itemprop="datePublished">2016-06-22</time>
 </a>
     </div>
   
@@ -218,7 +236,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      日记20160622
+      浏览器渲染页面的过程
     </h1>
   
 
@@ -234,7 +252,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>连着面了几家公司，明天还有一家，后天还要去深圳面一家，发现自己不会的东西还是很多的，毕竟相当于比别人晚起步几年了。<br>被训了一通，感觉心里略不爽，虽说早就做好回头进公司不断被训被批甚至可能被开掉的打算，然而被说成没有前途还是会很伤心。<br>之后路不好走我都做好心理准备了，已经选择了，我走，再难我也走下去。<br>不想认输，只想成功。</p>
+        <h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2><ol>
+<li>浏览器解析html源码，然后创建一个 DOM树。</li>
+<li>浏览器解析CSS代码，计算出最终的样式数据。</li>
+<li>构建一个渲染树（rendering tree）。<br>渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。<br>一大段文本中的每一个行在渲染树中都是独立的一个节点。<br>渲染树中的每一个节点都存储有对应的css属性。</li>
+<li>浏览器就根据渲染树直接把页面绘制到屏幕上。</li>
+</ol>
+<h2 id="重绘和重排（repaints-and-reflows）"><a href="#重绘和重排（repaints-and-reflows）" class="headerlink" title="重绘和重排（repaints and reflows）"></a>重绘和重排（repaints and reflows）</h2><ol>
+<li>重排<br>就是渲染树的一部分必须要更新 并且节点的尺寸发生了变化。这就会触发重排操作。</li>
+<li>重绘<br>部分节点需要更新，但是没有改变他的集合形状，比如改变了背景颜色，这就会触发重绘。</li>
+</ol>
+<p><strong>下面任何操作都会触发重绘或者重排：</strong></p>
+<ul>
+<li>增加或删除DOM节点</li>
+<li>设置 display: none;（重排并重绘） 或者 visibility: hidden（只有重排）</li>
+<li>移动页面中的元素</li>
+<li>增加或者修改样式</li>
+<li>用户改变窗口大小，滚动页面等</li>
+</ul>
 
       
     </div>
@@ -244,18 +279,9 @@
     
 <nav id="article-nav">
   
-    <a href="/angularjs工作机制/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          angularjs工作机制
-        
-      </div>
-    </a>
   
-  
-    <a href="/a中执行JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">a中执行JavaScript</div>
+    <a href="/angularjs工作机制/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angularjs工作机制</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

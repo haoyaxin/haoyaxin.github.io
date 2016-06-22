@@ -202,6 +202,157 @@
 
       <div class="body-wrap">
   
+    <article id="post-浏览器渲染页面的过程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/浏览器渲染页面的过程/" class="article-date">
+  	<time datetime="2016-06-22T15:30:50.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/浏览器渲染页面的过程/">浏览器渲染页面的过程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2><ol>
+<li>浏览器解析html源码，然后创建一个 DOM树。</li>
+<li>浏览器解析CSS代码，计算出最终的样式数据。</li>
+<li>构建一个渲染树（rendering tree）。<br>渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。<br>一大段文本中的每一个行在渲染树中都是独立的一个节点。<br>渲染树中的每一个节点都存储有对应的css属性。</li>
+<li>浏览器就根据渲染树直接把页面绘制到屏幕上。</li>
+</ol>
+<h2 id="重绘和重排（repaints-and-reflows）"><a href="#重绘和重排（repaints-and-reflows）" class="headerlink" title="重绘和重排（repaints and reflows）"></a>重绘和重排（repaints and reflows）</h2><ol>
+<li>重排<br>就是渲染树的一部分必须要更新 并且节点的尺寸发生了变化。这就会触发重排操作。</li>
+<li>重绘<br>部分节点需要更新，但是没有改变他的集合形状，比如改变了背景颜色，这就会触发重绘。</li>
+</ol>
+<p><strong>下面任何操作都会触发重绘或者重排：</strong></p>
+<ul>
+<li>增加或删除DOM节点</li>
+<li>设置 display: none;（重排并重绘） 或者 visibility: hidden（只有重排）</li>
+<li>移动页面中的元素</li>
+<li>增加或者修改样式</li>
+<li>用户改变窗口大小，滚动页面等</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-angularjs工作机制" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/angularjs工作机制/" class="article-date">
+  	<time datetime="2016-06-22T15:13:28.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/angularjs工作机制/">angularjs工作机制</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>了解angularjs的工作机制有助于不掉坑</p>
+<h3 id="AngularJS是如何渲染出一个页面"><a href="#AngularJS是如何渲染出一个页面" class="headerlink" title="AngularJS是如何渲染出一个页面"></a>AngularJS是如何渲染出一个页面</h3><p>当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：</p>
+<ol>
+<li>加载html，然后解析成DOM；</li>
+<li>加载angular.js脚本；</li>
+<li>AngularJS等待DOMContentLoaded事件的触发；</li>
+<li>AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；</li>
+<li>使用ng-app中指定的模块配置$injector；</li>
+<li>使用injector创建compile服务和$rootScope；</li>
+<li>使用compile服务编译DOM并把它链接到rootScope上；</li>
+<li>ng-init指令对scope里面的变量xxx进行赋值；</li>
+<li>对表达式进行替换<br>整个过程可以用这张图来表示：<br><img src="/img/angularjs工作机制/1.jpg" alt="img"></li>
+</ol>
+<h3 id="AngularJS如何和浏览器的事件回路-用户-来交互"><a href="#AngularJS如何和浏览器的事件回路-用户-来交互" class="headerlink" title="AngularJS如何和浏览器的事件回路(用户)来交互"></a>AngularJS如何和浏览器的事件回路(用户)来交互</h3><ol>
+<li>浏览器的事件回路一直等待着事件的触发，事件包括用户的交互操作、定时事件或者网络事件（如服务器的响应等）；</li>
+<li>一旦有事件触发，就会进入到Javascript的context中，一般通过回调函数来修改DOM；</li>
+<li><p>等到回调函数执行完毕之后，浏览器又根据新的DOM来渲染新的页面。<br>AngularJS修改了一般的Javascript工作流，并且提供了它自己的事件处理机制。<br>这样就把Javascript的context分隔成两部分，一部分是原生的Javascript的context，另一部分是AngularJS的context。<br><strong>只有处在AngularJS的context中的操作才能享受到Angular的data-binding、exception handling、property watching等服务，</strong><br>但是对于外来者（如原生的Javascript操作、自定义的事件回调、第三方的库等）Angular也不是一概不接见，<strong>可以使用AngularJS提供的$apply()函数</strong> 将这些外来者包进AngularJS的context中，让Angular感知到他们产生的变化。</p>
+<p>正如下面一张图所示，交互过程主要由几个循环组成：<br><img src="/img/angularjs工作机制/2.jpg" alt="img"></p>
+</li>
+</ol>
+<p><strong>交互过程中的这几个循环是怎么工作的：</strong></p>
+<ol>
+<li>首先，浏览器会一直处于监听状态，一旦有事件被触发，就会被加到一个event queue中，event queue中的事件会一个一个的执行。</li>
+<li>event queue中的事件如果是被$apply()包起来的话，就会进入到AngularJS的context中，这里的fn()是我们希望在AngularJS的context中执行的函数。</li>
+<li>AngularJS将执行fn()函数，通常情况下，这个函数会改变应用的某些状态。</li>
+<li>然后AngularJS会进入到由两个小循环组成的digest循环中，一个循环是用来处理evalAsync队列（用来schedule一些需要在渲染视图之前处理的操作，通常通过setTimeout(0)实现，速度会比较慢，可能会出现视图抖动的问题）的，一个循环是处理watch列表（是一些表达式的集合，一旦有改变发生，那么watch函数就会被调用）的。digest循环会一直迭代直到evalAsync队列为空并且$watch列表也为空的时候，即model不再有任何变化。</li>
+<li>一旦AngularJS的$digest循环结束，整个执行就会离开AngularJS和Javascript的context，紧接着浏览器就会把数据改变后的视图重新渲染出来。</li>
+</ol>
+<p>来源：<a href="http://www.cnblogs.com/penghongwei/p/3444601.html" target="_blank" rel="external">http://www.cnblogs.com/penghongwei/p/3444601.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-日记20160622" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1030,141 +1181,6 @@
       
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ECMAScript" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/ECMAScript/" class="article-date">
-  	<time datetime="2016-06-08T03:19:51.000Z" itemprop="datePublished">2016-06-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/ECMAScript/">ECMAScript</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>JavaScript 的核心 ECMAScript 描述了该语言的语法和基本对象；</strong></p>
-<h3 id="undefined和null的区别"><a href="#undefined和null的区别" class="headerlink" title="undefined和null的区别"></a>undefined和null的区别</h3><ul>
-<li>undefined 是声明了变量但未对其初始化时赋予该变量的值</li>
-<li>null 则用于表示尚未存在的对象（声明了未初始化 &amp; 未声明),如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。<h3 id="八进制-十六进制-声明"><a href="#八进制-十六进制-声明" class="headerlink" title="八进制 十六进制 声明"></a>八进制 十六进制 声明</h3></li>
-<li>八进制字面量的首数字必须是 0，其后的数字可以是任何八进制数字（0-7）</li>
-<li>首位数字必须为 0，后面接字母 x，然后是任意的十六进制数字（0 到 9 和 A 到 F）<br><em>尽管所有整数都可以表示为八进制或十六进制的字面量，但所有数学运算返回的都是十进制结果。</em><h3 id="number"><a href="#number" class="headerlink" title="number"></a>number</h3></li>
-<li>isFinite() 方法，判断数是有穷的</li>
-<li>NaN，表示非数（Not a Number）。一般说来，这种情况发生在类型（String、Boolean 等）转换失败时。它与自身不相等，所以不推荐使用 NaN 值本身，而是使用函数 isNaN()。<h3 id="number类型toString"><a href="#number类型toString" class="headerlink" title="number类型toString()"></a>number类型toString()</h3></li>
-<li>默认模式：用相应的字符串输出数字值（无论是整数、浮点数还是科学计数法）</li>
-<li>基模式：用不同的基输出数字，例如二进制的基是 2，八进制的基是 8，十六进制的基是 16。<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3></li>
-<li>Boolean(value) - 把给定的值转换成 Boolean 型；如果该值是空字符串、数字 0、undefined 或 null，它将返回 false。</li>
-<li>Number(value) - 把给定的值转换成数字（可以是整数或浮点数）；转换的是整个值，而不是部分值。</li>
-<li>String(value) - 把给定的值转换成字符串；把任何值转换成字符串。<h3 id="slice-和-substring"><a href="#slice-和-substring" class="headerlink" title="slice() 和 substring()"></a>slice() 和 substring()</h3>对于负数参数时两个函数是不同的</li>
-<li>slice() 方法会用字符串的长度加上参数</li>
-<li>substring() 方法则将其作为 0 处理（也就是说将忽略它）<h3 id="左移运算、有符号右移运算、无符号右移运算"><a href="#左移运算、有符号右移运算、无符号右移运算" class="headerlink" title="左移运算、有符号右移运算、无符号右移运算"></a>左移运算、有符号右移运算、无符号右移运算</h3></li>
-<li>左移运算： &lt;&lt; 左移运算用 0 填充这些空位;</li>
-<li>有符号右移运算： &gt;&gt; 保留该数的符号（正号或负号）；</li>
-<li>无符号右移运算：&gt;&gt;&gt; 无符号右移运算用 0 填充所有空位。负数的无符号右移运算得到的总是一个非常大的数字。<br>逻辑右移就是不考虑符号位，右移一位，左边补零即可。<br>算术右移需要考虑符号位，右移一位，若符号位为1，就在左边补1,；否则，就补0。<br>所以算术右移也可以进行有符号位的除法，右移n位就等于除2的n次方。<br>例如，8位二进制数11001101分别右移一位。<br>逻辑右移就是[0]1100110<br>算术右移就是[1]1100110<h3 id="AND-OR运算"><a href="#AND-OR运算" class="headerlink" title="AND OR运算"></a>AND OR运算</h3>如果某个运算数是 undefined，发生错误。</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-RSS" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/RSS/" class="article-date">
-  	<time datetime="2016-06-08T02:33:41.000Z" itemprop="datePublished">2016-06-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/RSS/">RSS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、什么是-RSS？"><a href="#一、什么是-RSS？" class="headerlink" title="一、什么是 RSS？"></a>一、什么是 RSS？</h2><ul>
-<li>RSS 指 Really Simple Syndication（真正简易联合）</li>
-<li>RSS 使您有能力聚合（syndicate）网站的内容</li>
-<li>RSS 定义了非常简单的方法来共享和查看标题和内容</li>
-<li>RSS 文件可被自动更新</li>
-<li>RSS 允许为不同的网站进行视图的个性化</li>
-<li>RSS 使用 XML 编写</li>
-</ul>
-<p>发布一个RSS文件后，这个RSS Feed中包含的信息就能直接被其他站点调用，而且由于这些数据都是标准的XML格式，所以也能在其他的终端和服务中使用，是一种描述和同步网站内容的格式。<br>网络用户可以在客户端借助于支持RSS的聚合工具软件，在不打开网站内容页面的情况下阅读支持RSS输出的网站内容。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/RSS/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
