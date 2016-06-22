@@ -202,6 +202,72 @@
 
       <div class="body-wrap">
   
+    <article id="post-网站访问过程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/网站访问过程/" class="article-date">
+  	<time datetime="2016-06-22T16:09:46.000Z" itemprop="datePublished">2016-06-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/网站访问过程/">网站访问过程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一个普通网站访问的过程"><a href="#一个普通网站访问的过程" class="headerlink" title="一个普通网站访问的过程"></a>一个普通网站访问的过程</h2><p>简单概括一下，对于我们普通的网站访问，涉及到的技术就是：</p>
+<ol>
+<li>用户操作浏览器访问，浏览器向服务器发出一个 HTTP 请求；</li>
+<li>服务器接收到 HTTP 请求，Web Server 进行相应的初步处理，使用服务器脚本生成页面；</li>
+<li>服务器脚本（利用Web Framework）调用本地和客户端传来的数据，生成页面；</li>
+<li>Web Server 将生成的页面作为 HTTP 响应的 body，根据不同的处理结果生成 HTTP header，发回给客户端；</li>
+<li>客户端（浏览器）接收到 HTTP 响应，通常第一个请求得到的 HTTP 响应的 body 里是 HTML 代码，于是对 HTML 代码开始解析；</li>
+<li>解析过程中遇到引用的服务器上的资源（额外的 CSS、JS代码，图片、音视频，附件等），再向 Web Server 发送请求，Web Server 找到对应的文件，发送回来；</li>
+<li>浏览器解析 HTML 包含的内容，用得到的 CSS 代码进行外观上的进一步渲染，JS 代码也可能会对外观进行一定的处理；</li>
+<li>用户与页面交互（点击，悬停等等）时，JS 代码对此作出一定的反应，添加特效与动画；</li>
+<li>交互的过程中可能需要向服务器索取或提交额外的数据（局部的刷新，类似微博的新消息通知），一般不是跳转就是通过 JS 代码（响应某个动作或者定时）向 Web Server 发送请求，Web Server 再用服务器脚本进行处理（生成资源or写入数据之类的），把资源返回给客户端，客户端用得到的资源来实现动态效果或其他改变。</li>
+</ol>
+<p><em>注意这只是小网站里比较常见的模型，大网站为了解决规模问题还会有很多处理，每个环节都会有一些细微的差异，中间还会使用各种各样的工具减轻服务器的压力，提高效率，方便日常维护~</em></p>
+<p>链接：<a href="https://www.zhihu.com/question/22689579/answer/22318058" target="_blank" rel="external">https://www.zhihu.com/question/22689579/answer/22318058</a><br>来源：知乎</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-浏览器渲染页面的过程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1118,60 +1184,6 @@
 <h3 id="移动应用"><a href="#移动应用" class="headerlink" title="移动应用"></a>移动应用</h3><p>Ionic, React Native, Meteor</p>
 <h3 id="编辑器和开发工具"><a href="#编辑器和开发工具" class="headerlink" title="编辑器和开发工具"></a>编辑器和开发工具</h3><p>Atom, Visual Studio Code, NPM, Git</p>
 <p>摘抄自：<a href="http://toutiao.com/a6228714188358025474/" target="_blank" rel="external">头条号 / 程序猿圈</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-APP的设计理念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/APP的设计理念/" class="article-date">
-  	<time datetime="2016-06-10T06:04:04.000Z" itemprop="datePublished">2016-06-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/APP的设计理念/">APP的设计理念</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>《瞬间之美》的一个核心观点：重要的并不是我们提供的信息量有多大，而是我们能否给他们提供真正需要的信息。</p>
-<p>–持续更新</p>
 
       
     </div>

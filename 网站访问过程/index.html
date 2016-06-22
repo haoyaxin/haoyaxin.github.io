@@ -4,36 +4,33 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>浏览器渲染页面的过程 | Eyshine</title>
+  <title>网站访问过程 | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器的渲染过程
-浏览器解析html源码，然后创建一个 DOM树。
-浏览器解析CSS代码，计算出最终的样式数据。
-构建一个渲染树（rendering tree）。渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。一大段文本中的每一个行在渲染树中都是独立的一个节点。渲染树中的每一个节点都存储有对应的css属性。
-浏览器就根据渲染树直接把页面绘制到屏幕上。
+  <meta name="description" content="一个普通网站访问的过程简单概括一下，对于我们普通的网站访问，涉及到的技术就是：
 
-重绘和重排（">
+用户操作浏览器访问，浏览器向服务器发出一个 HTTP 请求；
+服务器接收到 HTTP 请求，Web Server 进行相应的初步处理，使用服务器脚本生成页面；
+服务器脚本（利用Web Framework）调用本地和客户端传来的数据，生成页面；
+Web Server 将生成的页面作为 HTTP 响应的 body，根据不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器渲染页面的过程">
-<meta property="og:url" content="http://haoyaxin.github.io/浏览器渲染页面的过程/index.html">
+<meta property="og:title" content="网站访问过程">
+<meta property="og:url" content="http://haoyaxin.github.io/网站访问过程/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="浏览器的渲染过程
-浏览器解析html源码，然后创建一个 DOM树。
-浏览器解析CSS代码，计算出最终的样式数据。
-构建一个渲染树（rendering tree）。渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。一大段文本中的每一个行在渲染树中都是独立的一个节点。渲染树中的每一个节点都存储有对应的css属性。
-浏览器就根据渲染树直接把页面绘制到屏幕上。
+<meta property="og:description" content="一个普通网站访问的过程简单概括一下，对于我们普通的网站访问，涉及到的技术就是：
 
-重绘和重排（">
-<meta property="og:updated_time" content="2016-06-22T15:38:27.000Z">
+用户操作浏览器访问，浏览器向服务器发出一个 HTTP 请求；
+服务器接收到 HTTP 请求，Web Server 进行相应的初步处理，使用服务器脚本生成页面；
+服务器脚本（利用Web Framework）调用本地和客户端传来的数据，生成页面；
+Web Server 将生成的页面作为 HTTP 响应的 body，根据不">
+<meta property="og:updated_time" content="2016-06-22T16:12:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器渲染页面的过程">
-<meta name="twitter:description" content="浏览器的渲染过程
-浏览器解析html源码，然后创建一个 DOM树。
-浏览器解析CSS代码，计算出最终的样式数据。
-构建一个渲染树（rendering tree）。渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。一大段文本中的每一个行在渲染树中都是独立的一个节点。渲染树中的每一个节点都存储有对应的css属性。
-浏览器就根据渲染树直接把页面绘制到屏幕上。
+<meta name="twitter:title" content="网站访问过程">
+<meta name="twitter:description" content="一个普通网站访问的过程简单概括一下，对于我们普通的网站访问，涉及到的技术就是：
 
-重绘和重排（">
+用户操作浏览器访问，浏览器向服务器发出一个 HTTP 请求；
+服务器接收到 HTTP 请求，Web Server 进行相应的初步处理，使用服务器脚本生成页面；
+服务器脚本（利用Web Framework）调用本地和客户端传来的数据，生成页面；
+Web Server 将生成的页面作为 HTTP 响应的 body，根据不">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -219,11 +216,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-浏览器渲染页面的过程" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-网站访问过程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/浏览器渲染页面的过程/" class="article-date">
-  	<time datetime="2016-06-22T15:30:50.000Z" itemprop="datePublished">2016-06-22</time>
+      <a href="/网站访问过程/" class="article-date">
+  	<time datetime="2016-06-22T16:09:46.000Z" itemprop="datePublished">2016-06-23</time>
 </a>
     </div>
   
@@ -236,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      浏览器渲染页面的过程
+      网站访问过程
     </h1>
   
 
@@ -252,24 +249,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2><ol>
-<li>浏览器解析html源码，然后创建一个 DOM树。</li>
-<li>浏览器解析CSS代码，计算出最终的样式数据。</li>
-<li>构建一个渲染树（rendering tree）。<br>渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。<br>一大段文本中的每一个行在渲染树中都是独立的一个节点。<br>渲染树中的每一个节点都存储有对应的css属性。</li>
-<li>浏览器就根据渲染树直接把页面绘制到屏幕上。</li>
+        <h2 id="一个普通网站访问的过程"><a href="#一个普通网站访问的过程" class="headerlink" title="一个普通网站访问的过程"></a>一个普通网站访问的过程</h2><p>简单概括一下，对于我们普通的网站访问，涉及到的技术就是：</p>
+<ol>
+<li>用户操作浏览器访问，浏览器向服务器发出一个 HTTP 请求；</li>
+<li>服务器接收到 HTTP 请求，Web Server 进行相应的初步处理，使用服务器脚本生成页面；</li>
+<li>服务器脚本（利用Web Framework）调用本地和客户端传来的数据，生成页面；</li>
+<li>Web Server 将生成的页面作为 HTTP 响应的 body，根据不同的处理结果生成 HTTP header，发回给客户端；</li>
+<li>客户端（浏览器）接收到 HTTP 响应，通常第一个请求得到的 HTTP 响应的 body 里是 HTML 代码，于是对 HTML 代码开始解析；</li>
+<li>解析过程中遇到引用的服务器上的资源（额外的 CSS、JS代码，图片、音视频，附件等），再向 Web Server 发送请求，Web Server 找到对应的文件，发送回来；</li>
+<li>浏览器解析 HTML 包含的内容，用得到的 CSS 代码进行外观上的进一步渲染，JS 代码也可能会对外观进行一定的处理；</li>
+<li>用户与页面交互（点击，悬停等等）时，JS 代码对此作出一定的反应，添加特效与动画；</li>
+<li>交互的过程中可能需要向服务器索取或提交额外的数据（局部的刷新，类似微博的新消息通知），一般不是跳转就是通过 JS 代码（响应某个动作或者定时）向 Web Server 发送请求，Web Server 再用服务器脚本进行处理（生成资源or写入数据之类的），把资源返回给客户端，客户端用得到的资源来实现动态效果或其他改变。</li>
 </ol>
-<h2 id="重绘和重排（repaints-and-reflows）"><a href="#重绘和重排（repaints-and-reflows）" class="headerlink" title="重绘和重排（repaints and reflows）"></a>重绘和重排（repaints and reflows）</h2><ol>
-<li>重排<br>就是渲染树的一部分必须要更新 并且节点的尺寸发生了变化。这就会触发重排操作。</li>
-<li>重绘<br>部分节点需要更新，但是没有改变他的集合形状，比如改变了背景颜色，这就会触发重绘。</li>
-</ol>
-<p><strong>下面任何操作都会触发重绘或者重排：</strong></p>
-<ul>
-<li>增加或删除DOM节点</li>
-<li>设置 display: none;（重排并重绘） 或者 visibility: hidden（只有重排）</li>
-<li>移动页面中的元素</li>
-<li>增加或者修改样式</li>
-<li>用户改变窗口大小，滚动页面等</li>
-</ul>
+<p><em>注意这只是小网站里比较常见的模型，大网站为了解决规模问题还会有很多处理，每个环节都会有一些细微的差异，中间还会使用各种各样的工具减轻服务器的压力，提高效率，方便日常维护~</em></p>
+<p>链接：<a href="https://www.zhihu.com/question/22689579/answer/22318058" target="_blank" rel="external">https://www.zhihu.com/question/22689579/answer/22318058</a><br>来源：知乎</p>
 
       
     </div>
@@ -279,18 +272,9 @@
     
 <nav id="article-nav">
   
-    <a href="/网站访问过程/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          网站访问过程
-        
-      </div>
-    </a>
   
-  
-    <a href="/angularjs工作机制/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angularjs工作机制</div>
+    <a href="/浏览器渲染页面的过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浏览器渲染页面的过程</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
