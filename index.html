@@ -202,6 +202,82 @@
 
       <div class="body-wrap">
   
+    <article id="post-HTML5data-x属性" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/HTML5data-x属性/" class="article-date">
+  	<time datetime="2016-07-15T08:40:34.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/HTML5data-x属性/">HTML5data-*属性</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在HTML5中添加了data-<em> 的方式来 <strong>自定义属性</strong>。<br>所谓data-</em> 实际上上就是data-前缀加上自定义的属性名，使用这样的结构可以进行数据存放。</p>
+<h2 id="HTML-语法"><a href="#HTML-语法" class="headerlink" title="HTML 语法"></a>HTML 语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;article</span><br><span class="line">  id=&quot;electriccars&quot;</span><br><span class="line">  data-columns=&quot;3&quot;</span><br><span class="line">  data-index-number=&quot;12314&quot;</span><br><span class="line">  data-parent=&quot;cars&quot;&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/article&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>命名要求</strong></p>
+<ol>
+<li>data- 开头</li>
+<li>只能包括：字母 数字 - . : _</li>
+<li>不能包括大写字母</li>
+</ol>
+<h2 id="JS-获取"><a href="#JS-获取" class="headerlink" title="JS 获取"></a>JS 获取</h2><ol>
+<li>getAttribute()获取标签</li>
+<li><p>通常用的是：<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="external">HTMLElement.dataset</a><br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string = element.dataset.camelCasedName;</span><br><span class="line">element.dataset.camelCasedName = string;</span><br></pre></td></tr></table></figure>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var article = document.getElementById(&apos;electriccars&apos;);</span><br><span class="line"></span><br><span class="line">article.dataset.columns // &quot;3&quot;</span><br><span class="line">article.dataset.indexNumber // &quot;12314&quot;</span><br><span class="line">article.dataset.parent // &quot;cars&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="CSS-获取"><a href="#CSS-获取" class="headerlink" title="CSS 获取"></a>CSS 获取</h2><ol>
+<li><p>使用 attr()函数<br>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">article::before &#123;</span><br><span class="line">  content: attr(data-parent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用属性选择器<br>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">article[data-columns=&apos;3&apos;] &#123;</span><br><span class="line">  width: 400px;</span><br><span class="line">&#125;</span><br><span class="line">article[data-columns=&apos;4&apos;] &#123;</span><br><span class="line">  width: 600px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-日记20160715" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -856,333 +932,6 @@
 <h3 id="keywords关键字-给搜索引擎用的"><a href="#keywords关键字-给搜索引擎用的" class="headerlink" title="keywords关键字,给搜索引擎用的"></a>keywords关键字,给搜索引擎用的</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"keywords"</span> content=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="description页面描述"><a href="#description页面描述" class="headerlink" title="description页面描述"></a>description页面描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"description"</span> content=<span class="string">"This is my page"</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>这东西有很大学问在，要深入研究啊（老爷爷脸</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-CSS" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/CSS/" class="article-date">
-  	<time datetime="2016-06-13T15:24:40.000Z" itemprop="datePublished">2016-06-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/CSS/">CSS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#基础</p>
-<h3 id="样式规则优先顺序"><a href="#样式规则优先顺序" class="headerlink" title="样式规则优先顺序"></a>样式规则优先顺序</h3><p>HTML元素内部内联 &gt; head标签内部内联 &gt; 外部样式表 &gt; 浏览器缺省设置</p>
-<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ol>
-<li>id选择器<code>div#sidebar{} &lt;div id=&quot;sidebar&quot;&gt;</code><br>区分大小写</li>
-<li>类选择器<code>td.fancy{} &lt;td class=&quot;fancy&quot;&gt;</code><br>两个类选择器链接在一起，选择同时包含这些类名的元素（类名的顺序不限）。<br>区分大小写</li>
-<li>属性选择器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[href][title] &#123;&#125;</span><br><span class="line">a[href=<span class="string">"http://www.w3school.com.cn/"</span>][title=<span class="string">"W3School"</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[attribute]</td>
-<td style="text-align:center">用于选取带有指定属性的元素。</td>
-</tr>
-<tr>
-<td>[attribute=value]</td>
-<td style="text-align:center">用于选取带有指定属性和值的元素。</td>
-</tr>
-<tr>
-<td>[attribute~=value]</td>
-<td style="text-align:center">用于选取属性值中包含指定词汇的元素。</td>
-</tr>
-<tr>
-<td>[attribute（竖线）=value]</td>
-<td style="text-align:center">用于选取带有以指定值开头的属性值的元素，该值必须是整个单词。</td>
-</tr>
-<tr>
-<td>[attribute^=value]</td>
-<td style="text-align:center">匹配属性值以指定值开头的每个元素。</td>
-</tr>
-<tr>
-<td>[attribute$=value]</td>
-<td style="text-align:center">匹配属性值以指定值结尾的每个元素。</td>
-</tr>
-<tr>
-<td>[attribute*=value]</td>
-<td style="text-align:center">匹配属性值中包含指定值的每个元素。</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>通配选择器 <code>*</code> 该选择器可以与任何元素匹配，就像是一个通配符。</li>
-<li>后代选择器（包含选择器）<ul>
-<li>中间有空格</li>
-</ul>
-</li>
-<li>子元素选择器<br>h1&gt;strong空格可选，表示h1 元素子元素的所有 strong 元素</li>
-<li><p>相邻兄弟选择器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 + p &#123;margin-top:50px;&#125;</span><br></pre></td></tr></table></figure>
-<p>选择紧接在 h1 元素后出现的p，h1 和 p 元素拥有共同的父元素</p>
-</li>
-<li>伪类<br>| 属性        | 描述           |<br>| ————- |:————-:|<br>| :active    | 向被激活的元素添加样式。|<br>| :focus    | 向拥有键盘输入焦点的元素添加样式。|<br>| :hover    | 当鼠标悬浮在元素上方时，向元素添加样式。|<br>| :link    | 向未被访问的链接添加样式。|<br>| :visited    | 向已被访问的链接添加样式。|<br>| :first-child    | 向元素的第一个子元素添加样式。|<br>| :lang    | 向带有指定 lang 属性的元素添加样式。|</li>
-</ol>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
-<li>所有背景属性都不能继承，默认是透明。</li>
-<li>百分数值同时应用于元素和图像。也就是说，图像中描述为 50% 50% 的点（中心点）与元素中描述为 50% 50% 的点（中心点）对齐。</li>
-<li><code>background-attachment:fixed</code> 声明图像相对于可视区是固定的（fixed），因此不会受到滚动的影响，默认值是 scroll</li>
-<li>统一于一个声明：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: <span class="comment">#ff0000 url(/i/eg_bg_03.gif) no-repeat fixed center;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="段落、文本样式"><a href="#段落、文本样式" class="headerlink" title="段落、文本样式"></a>段落、文本样式</h3><ol>
-<li><strong>缩进方式：text-indent</strong><br>首行缩进<code>text-indent: 2em;</code>；<br>悬挂缩进<code>text-indent: -5em; padding-left: 5em;</code><br>text-indent可继承</li>
-<li><strong>对齐方式 text-align</strong><ul>
-<li>left right center justify interit</li>
-<li>justify：在两端对齐文本中，文本行的左右两端都放在父元素的内边界上。然后，调整单词和字母间的间隔，使各行的长度恰好相等。</li>
-</ul>
-</li>
-<li><strong>大小写 text-transform</strong><br>none uppercase lowercase capitalize</li>
-<li><strong>装饰 text-decoration</strong><ul>
-<li>none underline overline line-through blink</li>
-<li>可以在一个规则中结合多种装饰, text-decoration 值会替换而不是累积起来。</li>
-</ul>
-</li>
-<li><strong>空白符 white-space</strong><br>white-space: normal; 告诉浏览器按照平常的做法去处理：丢掉多余的空白符。</li>
-<li><strong>方向 direction</strong><ul>
-<li>direction 属性影响块级元素中文本的书写方向、表中列布局的方向、内容水平填充其元素框的方向、以及两端对齐元素中最后一行的位置。</li>
-<li>对于行内元素，只有当 unicode-bidi 属性设置为 embed 或 bidi-override 时才会应用 direction 属性。</li>
-<li>direction 属性有两个值：ltr 和 rtl。大多数情况下，默认值是 ltr，显示从左到右的文本。如果显示从右到左的文本，应使用值 rtl。</li>
-</ul>
-</li>
-<li><strong>字体集 font-family</strong><br>只有当字体名中有一个或多个空格（比如 New York），或者如果字体名包括 # 或 $ 之类的符号，才需要在 font-family 声明中加引号。</li>
-<li><strong>字体样式 font-style</strong><ul>
-<li>normal - 文本正常显示</li>
-<li>italic - 文本斜体显示 对每个字母的结构有一些小改动，来反映变化的外观</li>
-<li>oblique - 文本倾斜显示 正常竖直文本的一个倾斜版本。</li>
-</ul>
-</li>
-<li><strong>小型大写字母 font-variant</strong><br>小型大写字母不是一般的大写字母，也不是小写字母，这种字母采用不同大小的大写字母。</li>
-<li><strong>文本粗细 font-weight</strong><ul>
-<li>900 对应最粗的字体变形。数字 400 等价于 normal，而 700 等价于 bold。</li>
-<li>如果将元素的加粗设置为 bolder，浏览器会设置比 <strong>所继承值</strong> 更粗的一个字体加粗。与此相反，关键词 lighter 会导致浏览器将加粗度下移而不是上移。</li>
-</ul>
-</li>
-<li><p><strong>文本尺寸</strong></p>
-<ul>
-<li>普通文本（比如段落）的默认大小是 16 像素 (16px=1em)。</li>
-<li>W3C 推荐使用 em 尺寸单位。 避免在 Internet Explorer 中无法调整文本的问题</li>
-</ul>
-<p>合在一个声明里：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font: italic bold 12px/30px arial,sans-serif;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>•    a:link - 普通的、未被访问的链接<br>•    a:visited - 用户已访问的链接<br>•    a:hover - 鼠标指针位于链接的上方<br>•    a:active - 链接被点击的时刻<br>当为链接的不同状态设置样式时，请按照以下次序规则：<br>•    a:hover 必须位于 a:link 和 a:visited 之后<br>•    a:active 必须位于 a:hover 之后<br>a的display定位block就可以当作button来用</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
-<li>list-style-type : square</li>
-<li>list-style-image : url(xxx.gif)</li>
-<li>list-style-position 属性设置在何处放置列表项标记。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>list-style</td>
-<td style="text-align:center">简写属性。用于把所有用于列表的属性设置于一个声明中。</td>
-</tr>
-<tr>
-<td>list-style-image</td>
-<td style="text-align:center">将图象设置为列表项标志。</td>
-</tr>
-<tr>
-<td>list-style-position</td>
-<td style="text-align:center">设置列表中列表项标志的位置。</td>
-</tr>
-<tr>
-<td>list-style-type</td>
-<td style="text-align:center">设置列表项标志的类型。</td>
-</tr>
-<tr>
-<td>marker-offset</td>
-</tr>
-</tbody>
-</table>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><ol>
-<li>caption-side属性设置表格标题的位置。<br>top表格之上；bottom表格之下；inherit继承父元素；</li>
-<li>empty-cells 属性设置是否显示表格中的空单元格（仅用于“分离边框”模式）。<br>hide不绘制单元格边框；show绘制；inherit继承父元素；</li>
-<li>table-layout<br>automatic默认列宽度由单元格内容设定；fixed由表格宽度和列宽度设定；inherit继承；</li>
-</ol>
-<h3 id="边与轮廓"><a href="#边与轮廓" class="headerlink" title="边与轮廓"></a>边与轮廓</h3><ol>
-<li>border 边</li>
-<li>outline 绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</li>
-</ol>
-<h3 id="框模型"><a href="#框模型" class="headerlink" title="框模型"></a>框模型</h3><ol>
-<li>width height不包括padding；</li>
-<li>外边距默认是透明的，因此不会遮挡其后的任何元素。</li>
-<li>背景应用于由内容和内边距、边框组成的区域。</li>
-<li>外边距可以是负值，而且在很多情况下都要使用负值的外边距。</li>
-</ol>
-<h3 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h3><ol>
-<li>当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</li>
-<li>只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。</li>
-</ol>
-<h3 id="定位Positioning"><a href="#定位Positioning" class="headerlink" title="定位Positioning"></a>定位Positioning</h3><ol>
-<li>div、h1 或 p 元素常常被称为块级元素。这意味着这些元素显示为一块内容，即“块框”。</li>
-<li>与之相反，span 和 strong 等元素称为“行内元素”，这是因为它们的内容显示在行中，即“行内框”。</li>
-<li>由一行形成的水平框称为行框（Line Box），行框的高度总是足以容纳它包含的所有行内框。不过，设置行高可以增加这个框的高度。<br><code>static</code><br>元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。<br><code>relative</code><br>元素框相对于正常位置偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。<br><code>absolute</code><br>元素框从文档流完全删除，并相对于相对于最近的已定位 <strong>祖先元素</strong>。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。<br><code>fixed</code><br>元素框的表现类似于将 position 设置为 absolute，不过其包含块是 <strong>视窗</strong> 本身。</li>
-</ol>
-<h3 id="overflow-属性规定当内容溢出元素框时发生的事情。"><a href="#overflow-属性规定当内容溢出元素框时发生的事情。" class="headerlink" title="overflow 属性规定当内容溢出元素框时发生的事情。"></a>overflow 属性规定当内容溢出元素框时发生的事情。</h3><table>
-<thead>
-<tr>
-<th>值</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>visible</td>
-<td style="text-align:center">默认值。内容不会被修剪，会呈现在元素框之外。</td>
-</tr>
-<tr>
-<td>hidden</td>
-<td style="text-align:center">内容会被修剪，并且其余内容是不可见的。</td>
-</tr>
-<tr>
-<td>scroll</td>
-<td style="text-align:center">内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。</td>
-</tr>
-<tr>
-<td>auto</td>
-<td style="text-align:center">如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</td>
-</tr>
-<tr>
-<td>inherit</td>
-<td style="text-align:center">规定应该从父元素继承 overflow 属性的值。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="vertical-align-属性设置元素的垂直对齐方式。"><a href="#vertical-align-属性设置元素的垂直对齐方式。" class="headerlink" title="vertical-align 属性设置元素的垂直对齐方式。"></a>vertical-align 属性设置元素的垂直对齐方式。</h3><table>
-<thead>
-<tr>
-<th>值</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>baseline</td>
-<td style="text-align:center">默认。元素放置在父元素的基线上。</td>
-</tr>
-<tr>
-<td>sub</td>
-<td style="text-align:center">垂直对齐文本的下标。</td>
-</tr>
-<tr>
-<td>super</td>
-<td style="text-align:center">垂直对齐文本的上标</td>
-</tr>
-<tr>
-<td>top</td>
-<td style="text-align:center">把元素的顶端与行中最高元素的顶端对齐</td>
-</tr>
-<tr>
-<td>text-top</td>
-<td style="text-align:center">把元素的顶端与父元素字体的顶端对齐</td>
-</tr>
-<tr>
-<td>middle</td>
-<td style="text-align:center">把此元素放置在父元素的中部。</td>
-</tr>
-<tr>
-<td>bottom</td>
-<td style="text-align:center">把元素的顶端与行中最低的元素的顶端对齐。</td>
-</tr>
-<tr>
-<td>text-bottom</td>
-<td style="text-align:center">把元素的底端与父元素字体的底端对齐。</td>
-</tr>
-<tr>
-<td>length</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td>%</td>
-<td style="text-align:center">使用 “line-height” 属性的百分比值来排列此元素。允许使用负值。</td>
-</tr>
-<tr>
-<td>inherit</td>
-<td style="text-align:center">规定应该从父元素继承 vertical-align 属性的值。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="clip-属性剪裁绝对定位元素。"><a href="#clip-属性剪裁绝对定位元素。" class="headerlink" title="clip 属性剪裁绝对定位元素。"></a>clip 属性剪裁绝对定位元素。</h3><p>当一幅图像的尺寸大于包含它的元素时会发生什么呢？”clip” 属性允许您规定一个元素的可见尺寸，这样此元素就会被修剪并显示为这个形状。<br>这个属性用于定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>shape</td>
-<td style="text-align:center">设置元素的形状。唯一合法的形状值是：rect (top, right, bottom, left)</td>
-</tr>
-<tr>
-<td>auto</td>
-<td style="text-align:center">默认值。不应用任何剪裁。</td>
-</tr>
-<tr>
-<td>inherit</td>
-<td style="text-align:center">规定应该从父元素继承 clip 属性的值。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>详见<a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">这里</a></p>
 
       
     </div>
