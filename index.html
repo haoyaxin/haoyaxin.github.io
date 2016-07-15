@@ -202,6 +202,59 @@
 
       <div class="body-wrap">
   
+    <article id="post-日记20160715" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/日记20160715/" class="article-date">
+  	<time datetime="2016-07-15T08:33:38.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/日记20160715/">日记20160715</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>天呐，好久没更新了！但是一直在学习是真的。。<br>默默的感觉年初定下的今年读多少本书的目标可以实现了= =要学的东西实在太多了，已经无法脱离咖啡生活了<br>但是博还是要更的，不然学的东西积累不下来=白学<br>啊啊不说了没时间了拜拜</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-JavaScript中的this" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1130,69 +1183,6 @@
 </tbody>
 </table>
 <h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>详见<a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">这里</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-浏览器内核" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/浏览器内核/" class="article-date">
-  	<time datetime="2016-06-13T06:39:35.000Z" itemprop="datePublished">2016-06-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/浏览器内核/">浏览器内核</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>浏览器的内核引擎，基本上是四分天下：</p>
-<ul>
-<li>Trident: IE 以Trident 作为内核引擎;</li>
-<li>Gecko: Firefox 是基于 Gecko 开发;</li>
-<li>WebKit: Safari, Google Chrome,傲游3,猎豹浏览器,百度浏览器 opera浏览器 基于 Webkit 开发。</li>
-<li>Presto: Opera的内核，但由于市场选择问题，主要应用在手机平台–Opera mini<br>注：2013年2月Opera宣布转向WebKit引擎<br>注：2013年4月Opera宣布放弃WEBKIT，跟随GOOGLE的新开发的blink引擎</li>
-</ul>
-<h2 id="CSS上浏览器兼容："><a href="#CSS上浏览器兼容：" class="headerlink" title="CSS上浏览器兼容："></a>CSS上浏览器兼容：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-moz-   /* Firefox */</span><br><span class="line">-webkit-  /* Safari and Chrome */</span><br><span class="line">-o-  /* Opera */</span><br><span class="line">-ms-  /* IE 9 */</span><br></pre></td></tr></table></figure>
-<h3 id="浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同"><a href="#浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同" class="headerlink" title="浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同"></a>浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同</h3><p>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>碰到频率:100%<br>解决方案：CSS里<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;margin:0;padding:0;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>备注：这个是最常见的也是最易解决的一个浏览器兼容性问题，几乎所有的CSS文件开头都会用通配符*来设置各个标签的内外补丁是0。</p>
-<h3 id="浏览器兼容问题五：图片默认有间距"><a href="#浏览器兼容问题五：图片默认有间距" class="headerlink" title="浏览器兼容问题五：图片默认有间距"></a>浏览器兼容问题五：图片默认有间距</h3><p>问题症状：几个img标签放在一起的时候，有些浏览器会有默认的间距，加了问题一中提到的通配符也不起作用。<br>碰到几率：20%<br>解决方案：使用float属性为img布局<br>备注：因为img标签是行内属性标签，所以只要不超出容器宽度，img标签都会排在一行里，但是部分浏览器的img标签之间会有个间距。去掉这个间距使用float是正道。负margin本身就是容易引起浏览器兼容问题的用法，禁止使用</p>
 
       
     </div>
