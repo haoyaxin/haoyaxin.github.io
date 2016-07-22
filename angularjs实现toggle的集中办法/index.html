@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>实现隐藏/显示（toggle）的几种办法 及 原理注意点讨论 | Eyshine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="html hiddencss display和visibility注意display和visibility的区别
+displayblock：表现为一个块级元素（一般情况下独占一行）inline: 表现为一个行级元素（一般情况下不独占一行）none: 元素不可见，并且不为其保留相应的位置；隐藏属性值设为none的元素，会释放该元素在文档中所占的物理空间，对于其他元素来说，相当于该元素不存在，因此，该">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现隐藏/显示（toggle）的几种办法 及 原理注意点讨论">
+<meta property="og:url" content="http://haoyaxin.github.io/angularjs实现toggle的集中办法/index.html">
+<meta property="og:site_name" content="Eyshine">
+<meta property="og:description" content="html hiddencss display和visibility注意display和visibility的区别
+displayblock：表现为一个块级元素（一般情况下独占一行）inline: 表现为一个行级元素（一般情况下不独占一行）none: 元素不可见，并且不为其保留相应的位置；隐藏属性值设为none的元素，会释放该元素在文档中所占的物理空间，对于其他元素来说，相当于该元素不存在，因此，该">
+<meta property="og:updated_time" content="2016-07-22T15:43:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实现隐藏/显示（toggle）的几种办法 及 原理注意点讨论">
+<meta name="twitter:description" content="html hiddencss display和visibility注意display和visibility的区别
+displayblock：表现为一个块级元素（一般情况下独占一行）inline: 表现为一个行级元素（一般情况下不独占一行）none: 元素不可见，并且不为其保留相应的位置；隐藏属性值设为none的元素，会释放该元素在文档中所占的物理空间，对于其他元素来说，相当于该元素不存在，因此，该">
+  
+    <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Eyshine</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">踏实一些 谦虚一些 努力多一些</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>A propos</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">踏实一些 谦虚一些 努力多一些</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Eyshine</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Eyshine</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">踏实一些 谦虚一些 努力多一些</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-angularjs实现toggle的集中办法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/angularjs实现toggle的集中办法/" class="article-date">
+  	<time datetime="2016-07-22T11:32:56.000Z" itemprop="datePublished">2016-07-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      实现隐藏/显示（toggle）的几种办法 及 原理注意点讨论
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html-hidden"><a href="#html-hidden" class="headerlink" title="html hidden"></a>html hidden</h2><h2 id="css-display和visibility"><a href="#css-display和visibility" class="headerlink" title="css display和visibility"></a>css display和visibility</h2><p><strong>注意display和visibility的区别</strong></p>
+<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><p>block：表现为一个块级元素（一般情况下独占一行）<br>inline: 表现为一个行级元素（一般情况下不独占一行）<br>none: 元素不可见，并且不为其保留相应的位置；<em>隐藏属性值设为none的元素，会释放该元素在文档中所占的物理空间，对于其他元素来说，相当于该元素不存在，因此，该元素的位置被其他元素顶替</em></p>
+<h3 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h3><p>visible: 元素可见，默认值<br>hidden: 元素不可见，<em>但仍然为其保留相应的空间, 它仍然占据它原来所在的位置</em><br>collapse: 只对table对象起作用，能移除行或列但不会影响表格的布局。如果这个值用在table以外的对象上则表现为hidden。<br>inherit: 继承上级元素的visibility值。</p>
+<h3 id="display-none-和visibility-hidden-的区别"><a href="#display-none-和visibility-hidden-的区别" class="headerlink" title="display:none;和visibility:hidden;的区别"></a>display:none;和visibility:hidden;的区别</h3><ol>
+<li>display:none;<ul>
+<li>使用该属性后，HTML元素（对象）的宽度、高度等各种属性值都将“丢失”;</li>
+<li>用display：none来隐藏一个元素时，你必须知道其它内容将填充到该元素留下的空白位置，从而改变页面的布局。</li>
+<li>使用display:none隐藏的元素不会被百度等搜索网站检索，会影响到网站的SEO</li>
+</ul>
+</li>
+<li>visibility:hidden;<ul>
+<li>使用该属性后，HTML元素（对象）仅仅是在视觉上看不见（完全透明），而它所占据的空间位置仍然存在，也即是说它仍具有高度、宽度等属性值。</li>
+</ul>
+</li>
+</ol>
+<h2 id="jQuery-hide-show"><a href="#jQuery-hide-show" class="headerlink" title="jQuery hide() show()"></a>jQuery hide() show()</h2><h2 id="bootstrap-hide"><a href="#bootstrap-hide" class="headerlink" title="bootstrap .hide"></a>bootstrap .hide</h2><h2 id="利用angularjs的ng-show-ng-hide-ng-if实现显示-隐藏"><a href="#利用angularjs的ng-show-ng-hide-ng-if实现显示-隐藏" class="headerlink" title="利用angularjs的ng-show ng-hide ng-if实现显示/隐藏"></a>利用angularjs的ng-show ng-hide ng-if实现显示/隐藏</h2><h3 id="原理上的区别"><a href="#原理上的区别" class="headerlink" title="原理上的区别"></a>原理上的区别</h3><ul>
+<li>ng-show/ng-hide是通过修改CSS样式方式控制元素显示与隐藏，对应的DOM元素会一直存在于当前页面中。</li>
+<li>ng-if根据表达式的值动态的在当前的页面中添加删除页面元素。如果赋值表达式的值为false，那么这个元素就会从页面中删除，否则会添加一个元素。ng-if创建元素时用的是被它编译后的代码，<em>如果ng-if内部的代码被其它方式修改过，那么修改只会对本次展现有效，页面元素重新渲染后修改效果会消失</em></li>
+<li>ng-show/ng-hide则能够保留dom元素上次修改后的状态。<h3 id="作用域上的区别"><a href="#作用域上的区别" class="headerlink" title="作用域上的区别"></a>作用域上的区别</h3></li>
+<li>当一个元素被ng-if从DOM中删除时，与其关联的作用域也会被销毁。而且当它重新加入DOM中时，则会生成一个新的作用域</li>
+<li>ng-show和ng-hide则不会。<br>例子：<br>源代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=&quot;MainCtrl&quot;&gt;</span><br><span class="line">    &lt;div ng-show=&quot;false&quot;&gt;</span><br><span class="line">         ng-show = false</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-show=&quot;true&quot;&gt;</span><br><span class="line">        ng-show=true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-if=&quot;true&quot;&gt;</span><br><span class="line">        ng-if = true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-if=&quot;false&quot;&gt;</span><br><span class="line">        ng-if = false</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>页面最终代码片段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=&quot;MainCtrl&quot; class=&quot;ng-scope&quot;&gt;</span><br><span class="line">    &lt;div ng-show=&quot;false&quot; class=&quot;ng-hide&quot;&gt;</span><br><span class="line">        ng-show = false</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-show=&quot;true&quot; class=&quot;&quot;&gt;</span><br><span class="line">        ng-show=true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- ngIf: true --&gt;</span><br><span class="line">    &lt;div ng-if=&quot;true&quot; class=&quot;ng-scope&quot;&gt;</span><br><span class="line">        ng-if = true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- end ngIf: true --&gt;</span><br><span class="line">    &lt;!-- ngIf: false --&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>参考：<a href="http://stackoverflow.com/questions/19177732/what-is-the-difference-between-ng-if-and-ng-show-ng-hide" target="_blank" rel="external">stackoverflow</a></p>
+<h2 id="利用angularjs的ng-class动态添加类"><a href="#利用angularjs的ng-class动态添加类" class="headerlink" title="利用angularjs的ng-class动态添加类"></a>利用angularjs的ng-class动态添加类</h2><ol>
+<li>ng-repeat实现tab的复用</li>
+<li>对象数组存储tab的具体数据</li>
+<li>ng-class动态加载active样式</li>
+</ol>
+<h2 id="利用angularjs的ng-switch属性"><a href="#利用angularjs的ng-switch属性" class="headerlink" title="利用angularjs的ng-switch属性"></a>利用angularjs的ng-switch属性</h2><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ANY ng-switch=&quot;expression&quot;&gt;</span><br><span class="line">  &lt;ANY ng-switch-when=&quot;matchValue1&quot;&gt;...&lt;/ANY&gt;</span><br><span class="line">  &lt;ANY ng-switch-when=&quot;matchValue2&quot;&gt;...&lt;/ANY&gt;</span><br><span class="line">  &lt;ANY ng-switch-default&gt;...&lt;/ANY&gt;</span><br><span class="line">&lt;/ANY&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意ng-switch的实现原理是将</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/日记20160717/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日记20160717</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Eyshine
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

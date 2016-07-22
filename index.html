@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>A propos</li>
 						
 					</ul>
 				</div>
@@ -201,6 +201,90 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-angularjs实现toggle的集中办法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/angularjs实现toggle的集中办法/" class="article-date">
+  	<time datetime="2016-07-22T11:32:56.000Z" itemprop="datePublished">2016-07-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/angularjs实现toggle的集中办法/">实现隐藏/显示（toggle）的几种办法 及 原理注意点讨论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html-hidden"><a href="#html-hidden" class="headerlink" title="html hidden"></a>html hidden</h2><h2 id="css-display和visibility"><a href="#css-display和visibility" class="headerlink" title="css display和visibility"></a>css display和visibility</h2><p><strong>注意display和visibility的区别</strong></p>
+<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><p>block：表现为一个块级元素（一般情况下独占一行）<br>inline: 表现为一个行级元素（一般情况下不独占一行）<br>none: 元素不可见，并且不为其保留相应的位置；<em>隐藏属性值设为none的元素，会释放该元素在文档中所占的物理空间，对于其他元素来说，相当于该元素不存在，因此，该元素的位置被其他元素顶替</em></p>
+<h3 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h3><p>visible: 元素可见，默认值<br>hidden: 元素不可见，<em>但仍然为其保留相应的空间, 它仍然占据它原来所在的位置</em><br>collapse: 只对table对象起作用，能移除行或列但不会影响表格的布局。如果这个值用在table以外的对象上则表现为hidden。<br>inherit: 继承上级元素的visibility值。</p>
+<h3 id="display-none-和visibility-hidden-的区别"><a href="#display-none-和visibility-hidden-的区别" class="headerlink" title="display:none;和visibility:hidden;的区别"></a>display:none;和visibility:hidden;的区别</h3><ol>
+<li>display:none;<ul>
+<li>使用该属性后，HTML元素（对象）的宽度、高度等各种属性值都将“丢失”;</li>
+<li>用display：none来隐藏一个元素时，你必须知道其它内容将填充到该元素留下的空白位置，从而改变页面的布局。</li>
+<li>使用display:none隐藏的元素不会被百度等搜索网站检索，会影响到网站的SEO</li>
+</ul>
+</li>
+<li>visibility:hidden;<ul>
+<li>使用该属性后，HTML元素（对象）仅仅是在视觉上看不见（完全透明），而它所占据的空间位置仍然存在，也即是说它仍具有高度、宽度等属性值。</li>
+</ul>
+</li>
+</ol>
+<h2 id="jQuery-hide-show"><a href="#jQuery-hide-show" class="headerlink" title="jQuery hide() show()"></a>jQuery hide() show()</h2><h2 id="bootstrap-hide"><a href="#bootstrap-hide" class="headerlink" title="bootstrap .hide"></a>bootstrap .hide</h2><h2 id="利用angularjs的ng-show-ng-hide-ng-if实现显示-隐藏"><a href="#利用angularjs的ng-show-ng-hide-ng-if实现显示-隐藏" class="headerlink" title="利用angularjs的ng-show ng-hide ng-if实现显示/隐藏"></a>利用angularjs的ng-show ng-hide ng-if实现显示/隐藏</h2><h3 id="原理上的区别"><a href="#原理上的区别" class="headerlink" title="原理上的区别"></a>原理上的区别</h3><ul>
+<li>ng-show/ng-hide是通过修改CSS样式方式控制元素显示与隐藏，对应的DOM元素会一直存在于当前页面中。</li>
+<li>ng-if根据表达式的值动态的在当前的页面中添加删除页面元素。如果赋值表达式的值为false，那么这个元素就会从页面中删除，否则会添加一个元素。ng-if创建元素时用的是被它编译后的代码，<em>如果ng-if内部的代码被其它方式修改过，那么修改只会对本次展现有效，页面元素重新渲染后修改效果会消失</em></li>
+<li>ng-show/ng-hide则能够保留dom元素上次修改后的状态。<h3 id="作用域上的区别"><a href="#作用域上的区别" class="headerlink" title="作用域上的区别"></a>作用域上的区别</h3></li>
+<li>当一个元素被ng-if从DOM中删除时，与其关联的作用域也会被销毁。而且当它重新加入DOM中时，则会生成一个新的作用域</li>
+<li>ng-show和ng-hide则不会。<br>例子：<br>源代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=&quot;MainCtrl&quot;&gt;</span><br><span class="line">    &lt;div ng-show=&quot;false&quot;&gt;</span><br><span class="line">         ng-show = false</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-show=&quot;true&quot;&gt;</span><br><span class="line">        ng-show=true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-if=&quot;true&quot;&gt;</span><br><span class="line">        ng-if = true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-if=&quot;false&quot;&gt;</span><br><span class="line">        ng-if = false</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>页面最终代码片段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=&quot;MainCtrl&quot; class=&quot;ng-scope&quot;&gt;</span><br><span class="line">    &lt;div ng-show=&quot;false&quot; class=&quot;ng-hide&quot;&gt;</span><br><span class="line">        ng-show = false</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div ng-show=&quot;true&quot; class=&quot;&quot;&gt;</span><br><span class="line">        ng-show=true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- ngIf: true --&gt;</span><br><span class="line">    &lt;div ng-if=&quot;true&quot; class=&quot;ng-scope&quot;&gt;</span><br><span class="line">        ng-if = true</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- end ngIf: true --&gt;</span><br><span class="line">    &lt;!-- ngIf: false --&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>参考：<a href="http://stackoverflow.com/questions/19177732/what-is-the-difference-between-ng-if-and-ng-show-ng-hide" target="_blank" rel="external">stackoverflow</a></p>
+<h2 id="利用angularjs的ng-class动态添加类"><a href="#利用angularjs的ng-class动态添加类" class="headerlink" title="利用angularjs的ng-class动态添加类"></a>利用angularjs的ng-class动态添加类</h2><ol>
+<li>ng-repeat实现tab的复用</li>
+<li>对象数组存储tab的具体数据</li>
+<li>ng-class动态加载active样式</li>
+</ol>
+<h2 id="利用angularjs的ng-switch属性"><a href="#利用angularjs的ng-switch属性" class="headerlink" title="利用angularjs的ng-switch属性"></a>利用angularjs的ng-switch属性</h2><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ANY ng-switch=&quot;expression&quot;&gt;</span><br><span class="line">  &lt;ANY ng-switch-when=&quot;matchValue1&quot;&gt;...&lt;/ANY&gt;</span><br><span class="line">  &lt;ANY ng-switch-when=&quot;matchValue2&quot;&gt;...&lt;/ANY&gt;</span><br><span class="line">  &lt;ANY ng-switch-default&gt;...&lt;/ANY&gt;</span><br><span class="line">&lt;/ANY&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意ng-switch的实现原理是将</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-日记20160717" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -761,70 +845,6 @@
 <li><p>a href=”#” onclick=”js_method();return false;”<br>这种方法点击执行了js函数后return false，页面不发生跳转，执行后还是在页面的当前位置。</p>
 </li>
 </ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css3之box-sizing" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/css3之box-sizing/" class="article-date">
-  	<time datetime="2016-06-18T18:11:40.000Z" itemprop="datePublished">2016-06-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/css3之box-sizing/">css3之box-sizing</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing ： content-box || border-box || inherit</span><br></pre></td></tr></table></figure>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul>
-<li>content-box：此值为其默认值，其让元素维持W3C的标准Box Model。<br>也就是说元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度 /高度（content width/height）<br>即：<strong>Element Width/Height = border + padding + content width/height</strong>。</li>
-<li>border-box:此值让元素维持IE传统的Box Model（IE6以下版本）。<br>也就是说元素的宽度/高度等于元素内容的宽度/高度。这里的content width/height包含了元素的border,padding,内容的width/height。<br>即：<strong>此处的内容宽度/高度=width /height-border-padding</strong>。</li>
-</ul>
-<p>在实际应用中，该属性有个非常有用的地方，即根据百分比为元素设置宽度时。此时，如果元素有padding或者border，将box-sizing设置为border-box会非常有用。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;Page title&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1 class=<span class="string">"hello-world"</span>&gt;1&lt;/h1&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"box-sizing:border-box; padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;h1 class=<span class="string">"hello-world"</span>&gt;2&lt;/h1&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li style=<span class="string">"padding:0 10px; width:25%; float:left;"</span>&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>该例子中，</p>
-<ul>
-<li>2情况下，li一定不能保持在同一行内。</li>
-<li>1情况设置了box-sizing：border-box之后，就可以保证li在同一行内。（IE8+和高级浏览器支持）</li>
-</ul>
 
       
     </div>
