@@ -202,6 +202,60 @@
 
       <div class="body-wrap">
   
+    <article id="post-angularjs字符插值" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/angularjs字符插值/" class="article-date">
+  	<time datetime="2016-07-23T10:02:14.000Z" itemprop="datePublished">2016-07-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/angularjs字符插值/">angularjs字符插值</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅做基础解释，用法回头再补充</p>
+<p>字符串插值允许使用者 <strong>将变量引用直接插入处理过的字面字符中</strong>。如下例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val name=&quot;James&quot;</span><br><span class="line">println(s&quot;Hello,$name&quot;)//Hello,James</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-angularjs中的绑定策略" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -763,87 +817,6 @@
 <li>增加或者修改样式</li>
 <li>用户改变窗口大小，滚动页面等</li>
 </ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-angularjs工作机制" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/angularjs工作机制/" class="article-date">
-  	<time datetime="2016-06-22T15:13:28.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/angularjs工作机制/">angularjs工作机制</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>了解angularjs的工作机制有助于不掉坑</p>
-<h3 id="AngularJS是如何渲染出一个页面"><a href="#AngularJS是如何渲染出一个页面" class="headerlink" title="AngularJS是如何渲染出一个页面"></a>AngularJS是如何渲染出一个页面</h3><p>当你用浏览器去访问index.html的时候，浏览器依次做了如下一些事情：</p>
-<ol>
-<li>加载html，然后解析成DOM；</li>
-<li>加载angular.js脚本；</li>
-<li>AngularJS等待DOMContentLoaded事件的触发；</li>
-<li>AngularJS寻找ng-app指令，根据这个指令确定应用程序的边界；</li>
-<li>使用ng-app中指定的模块配置$injector；</li>
-<li>使用injector创建compile服务和$rootScope；</li>
-<li>使用compile服务编译DOM并把它链接到rootScope上；</li>
-<li>ng-init指令对scope里面的变量xxx进行赋值；</li>
-<li>对表达式进行替换<br>整个过程可以用这张图来表示：<br><img src="/img/angularjs工作机制/1.jpg" alt="img"></li>
-</ol>
-<h3 id="AngularJS如何和浏览器的事件回路-用户-来交互"><a href="#AngularJS如何和浏览器的事件回路-用户-来交互" class="headerlink" title="AngularJS如何和浏览器的事件回路(用户)来交互"></a>AngularJS如何和浏览器的事件回路(用户)来交互</h3><ol>
-<li>浏览器的事件回路一直等待着事件的触发，事件包括用户的交互操作、定时事件或者网络事件（如服务器的响应等）；</li>
-<li>一旦有事件触发，就会进入到Javascript的context中，一般通过回调函数来修改DOM；</li>
-<li><p>等到回调函数执行完毕之后，浏览器又根据新的DOM来渲染新的页面。<br>AngularJS修改了一般的Javascript工作流，并且提供了它自己的事件处理机制。<br>这样就把Javascript的context分隔成两部分，一部分是原生的Javascript的context，另一部分是AngularJS的context。<br><strong>只有处在AngularJS的context中的操作才能享受到Angular的data-binding、exception handling、property watching等服务，</strong><br>但是对于外来者（如原生的Javascript操作、自定义的事件回调、第三方的库等）Angular也不是一概不接见，<strong>可以使用AngularJS提供的$apply()函数</strong> 将这些外来者包进AngularJS的context中，让Angular感知到他们产生的变化。</p>
-<p>正如下面一张图所示，交互过程主要由几个循环组成：<br><img src="/img/angularjs工作机制/2.jpg" alt="img"></p>
-</li>
-</ol>
-<p><strong>交互过程中的这几个循环是怎么工作的：</strong></p>
-<ol>
-<li>首先，浏览器会一直处于监听状态，一旦有事件被触发，就会被加到一个event queue中，event queue中的事件会一个一个的执行。</li>
-<li>event queue中的事件如果是被$apply()包起来的话，就会进入到AngularJS的context中，这里的fn()是我们希望在AngularJS的context中执行的函数。</li>
-<li>AngularJS将执行fn()函数，通常情况下，这个函数会改变应用的某些状态。</li>
-<li>然后AngularJS会进入到由两个小循环组成的digest循环中，一个循环是用来处理evalAsync队列（用来schedule一些需要在渲染视图之前处理的操作，通常通过setTimeout(0)实现，速度会比较慢，可能会出现视图抖动的问题）的，一个循环是处理watch列表（是一些表达式的集合，一旦有改变发生，那么watch函数就会被调用）的。digest循环会一直迭代直到evalAsync队列为空并且$watch列表也为空的时候，即model不再有任何变化。</li>
-<li>一旦AngularJS的$digest循环结束，整个执行就会离开AngularJS和Javascript的context，紧接着浏览器就会把数据改变后的视图重新渲染出来。</li>
-</ol>
-<p>来源：<a href="http://www.cnblogs.com/penghongwei/p/3444601.html" target="_blank" rel="external">http://www.cnblogs.com/penghongwei/p/3444601.html</a></p>
 
       
     </div>
