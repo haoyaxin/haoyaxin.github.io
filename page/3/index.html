@@ -202,6 +202,136 @@
 
       <div class="body-wrap">
   
+    <article id="post-JSON基础" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/JSON基础/" class="article-date">
+  	<time datetime="2016-06-07T17:12:27.000Z" itemprop="datePublished">2016-06-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JSON基础/">JSON基础</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>JSON：JavaScript 对象表示法（JavaScript Object Notation）。</li>
+<li>JavaScript 程序能够使用内建的 eval() 函数，用 JSON 数据来生成原生的 JavaScript 对象。</li>
+<li>JSON 语法是 JavaScript 对象表示法语法的子集。<br>数据在名称/值对中<br>数据由逗号分隔<br>花括号保存对象<br>方括号保存数组</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"employees"</span>: [</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"John"</span> , <span class="string">"lastName"</span>:<span class="string">"Doe"</span> &#125;,</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"Anna"</span> , <span class="string">"lastName"</span>:<span class="string">"Smith"</span> &#125;,</span><br><span class="line">&#123; <span class="string">"firstName"</span>:<span class="string">"Peter"</span> , <span class="string">"lastName"</span>:<span class="string">"Jones"</span> &#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JSON-string与对象互转"><a href="#JSON-string与对象互转" class="headerlink" title="JSON string与对象互转"></a>JSON string与对象互转</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JSON.parse(jsonStr);</span><br><span class="line">JSON.stringify(object);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-AJAX基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/AJAX基础知识/" class="article-date">
+  	<time datetime="2016-06-07T16:12:09.000Z" itemprop="datePublished">2016-06-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AJAX基础知识/">AJAX基础知识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>XMLHttpRequest 对象（IE5 和 IE6 使用 ActiveXObject）用于在后台与服务器交换数据。</p>
+<h2 id="向服务器发送请求"><a href="#向服务器发送请求" class="headerlink" title="向服务器发送请求"></a>向服务器发送请求</h2><p>XMLHttpRequest 对象的 open() 和 send() 方法：</p>
+<ol>
+<li><code>open(method,url,async)</code><br>规定请求的类型、URL 以及是否异步处理请求。</li>
+</ol>
+<ul>
+<li>method：请求的类型；GET 或 POST</li>
+<li>url：文件在服务器上的位置</li>
+<li>async：true（异步）或 false（同步）,如果要用于 AJAX 的话，必须是true</li>
+</ul>
+<ol>
+<li><code>send(string)</code><br>将请求发送到服务器。</li>
+</ol>
+<ul>
+<li>string：仅用于 POST 请求
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/AJAX基础知识/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-HTML-DOM散落的知识点" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -664,64 +794,9 @@
 
 
   
-    <article id="post-hexo小结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexo小结/">hexo小结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误"><a href="#1-执行-hexo-deploy-后-出现-error-deployer-not-found-github-的错误" class="headerlink" title="1. 执行 hexo deploy 后,出现 error deployer not found:github 的错误"></a>1. 执行 hexo deploy 后,出现 error deployer not found:github 的错误</h3><p>解决办法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>之后执行deploy<br>另：yaml语法要求严格，注意空格，冒号后面要有一个空格。</p>
-<h3 id="2-不显示日期"><a href="#2-不显示日期" class="headerlink" title="2. 不显示日期"></a>2. 不显示日期</h3><p>markdown文件头部 <code>noDate: &quot;true&quot;</code></p>
-<h3 id="3-关于litten的主题"><a href="#3-关于litten的主题" class="headerlink" title="3. 关于litten的主题"></a>3. 关于litten的主题</h3><ol>
-<li>配置文件和css中的路径都是绝对路径，可优化。</li>
-<li>心疼litten= =博客下面简直成了小白重灾区= =</li>
-<li>边栏友情链接未修改</li>
-<li>边栏主页按钮浮动menu未修改</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>

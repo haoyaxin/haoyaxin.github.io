@@ -4,17 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016/7 | Eyshine</title>
+  <title>angularjs中的绑定策略 | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="踏实一些 谦虚一些 努力多一些">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Eyshine">
-<meta property="og:url" content="http://haoyaxin.github.io/archives/2016/07/index.html">
+  <meta name="description" content="为了让 新的指令作用域可以访问当前本地作用域中的变量，需要使用下面三种别名中的一种。
+本地作用域属性：使用@符号将本地作用域同DOM属性的值进行绑定。指令内部作用域可以使用外部作用域的变量：1@ (or @attr)
+现在，可以在指令中使用绑定的字符串了。
+双向绑定：通过=可以将本地作用域上的属性同父级作用域上的属性进行双向的数据绑定。就像普通的数据绑定一样，本地属性会反映出父数据模型中所发生的改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularjs中的绑定策略">
+<meta property="og:url" content="http://haoyaxin.github.io/angularjs中的绑定策略/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="踏实一些 谦虚一些 努力多一些">
+<meta property="og:description" content="为了让 新的指令作用域可以访问当前本地作用域中的变量，需要使用下面三种别名中的一种。
+本地作用域属性：使用@符号将本地作用域同DOM属性的值进行绑定。指令内部作用域可以使用外部作用域的变量：1@ (or @attr)
+现在，可以在指令中使用绑定的字符串了。
+双向绑定：通过=可以将本地作用域上的属性同父级作用域上的属性进行双向的数据绑定。就像普通的数据绑定一样，本地属性会反映出父数据模型中所发生的改">
+<meta property="og:updated_time" content="2016-07-23T08:26:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eyshine">
-<meta name="twitter:description" content="踏实一些 谦虚一些 努力多一些">
+<meta name="twitter:title" content="angularjs中的绑定策略">
+<meta name="twitter:description" content="为了让 新的指令作用域可以访问当前本地作用域中的变量，需要使用下面三种别名中的一种。
+本地作用域属性：使用@符号将本地作用域同DOM属性的值进行绑定。指令内部作用域可以使用外部作用域的变量：1@ (or @attr)
+现在，可以在指令中使用绑定的字符串了。
+双向绑定：通过=可以将本地作用域上的属性同父级作用域上的属性进行双向的数据绑定。就像普通的数据绑定一样，本地属性会反映出父数据模型中所发生的改">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -200,184 +210,90 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-angularjs中的绑定策略" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/angularjs中的绑定策略/" class="article-date">
+  	<time datetime="2016-07-23T08:22:22.000Z" itemprop="datePublished">2016-07-23</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angularjs中的绑定策略
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/angularjs中的绑定策略/" class="archive-article-date">
-  	<time datetime="2016-07-23T08:22:22.000Z" itemprop="datePublished">Jul 23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/angularjs中的绑定策略/">angularjs中的绑定策略</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为了让 <strong>新的指令作用域可以访问当前本地作用域中的变量</strong>，需要使用下面三种别名中的一种。</p>
+<h2 id="本地作用域属性："><a href="#本地作用域属性：" class="headerlink" title="本地作用域属性："></a>本地作用域属性：</h2><p>使用@符号将本地作用域同DOM属性的值进行绑定。指令内部作用域可以使用外部作用域的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ (or @attr)</span><br></pre></td></tr></table></figure></p>
+<p>现在，可以在指令中使用绑定的字符串了。</p>
+<h2 id="双向绑定："><a href="#双向绑定：" class="headerlink" title="双向绑定："></a>双向绑定：</h2><p>通过=可以将本地作用域上的属性同父级作用域上的属性进行双向的数据绑定。就像普通的数据绑定一样，本地属性会反映出父数据模型中所发生的改变。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">= (or =attr)</span><br><span class="line">````　　</span><br><span class="line"></span><br><span class="line">## 父级作用域绑定</span><br><span class="line">通过&amp;符号可以对父级作用域进行绑定，以便在其中运行函数。意味着对这个值进行设置时会生成一个指向父级作用域的包装函数。</span><br><span class="line">要使调用带有一个参数的父方法，我们需要传递一个对象，这个对象的键是参数的名称，值是要传递给参数的内容。</span><br></pre></td></tr></table></figure></p>
+<p>&amp; (or &amp;attr)<br>````　</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>@ 绑定策略只能绑定（或者理解成传递）字符串值。<br>要想传递方法(&amp;)或者实现双向数据绑定(=)等操作，就得需要使用其它两个绑定方式</p>
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/angularjs中parse和eval/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angularjs中$parse和$eval</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/angularjs中parse和eval/" class="archive-article-date">
-  	<time datetime="2016-07-23T01:51:02.000Z" itemprop="datePublished">Jul 23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/angularjs中parse和eval/">angularjs中$parse和$eval</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/angularjs实现toggle的集中办法/" class="archive-article-date">
-  	<time datetime="2016-07-22T11:32:56.000Z" itemprop="datePublished">Jul 22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/angularjs实现toggle的集中办法/">实现隐藏/显示（toggle）的几种办法 及 原理注意点讨论</a>
-    </h1>
-  
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/日记20160717/" class="archive-article-date">
-  	<time datetime="2016-07-17T06:13:23.000Z" itemprop="datePublished">Jul 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/日记20160717/">日记20160717</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/HTML5data-x属性/" class="archive-article-date">
-  	<time datetime="2016-07-15T08:40:34.000Z" itemprop="datePublished">Jul 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/HTML5data-x属性/">HTML5data-*属性</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/日记20160715/" class="archive-article-date">
-  	<time datetime="2016-07-15T08:33:38.000Z" itemprop="datePublished">Jul 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/日记20160715/">日记20160715</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 </div>
       <footer id="footer">
@@ -403,8 +319,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
