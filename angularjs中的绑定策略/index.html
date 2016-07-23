@@ -18,7 +18,7 @@
 本地作用域属性：使用@符号将本地作用域同DOM属性的值进行绑定。指令内部作用域可以使用外部作用域的变量：1@ (or @attr)
 现在，可以在指令中使用绑定的字符串了。
 双向绑定：通过=可以将本地作用域上的属性同父级作用域上的属性进行双向的数据绑定。就像普通的数据绑定一样，本地属性会反映出父数据模型中所发生的改">
-<meta property="og:updated_time" content="2016-07-23T08:26:21.000Z">
+<meta property="og:updated_time" content="2016-07-23T08:28:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angularjs中的绑定策略">
 <meta name="twitter:description" content="为了让 新的指令作用域可以访问当前本地作用域中的变量，需要使用下面三种别名中的一种。
@@ -246,8 +246,8 @@
         <p>为了让 <strong>新的指令作用域可以访问当前本地作用域中的变量</strong>，需要使用下面三种别名中的一种。</p>
 <h2 id="本地作用域属性："><a href="#本地作用域属性：" class="headerlink" title="本地作用域属性："></a>本地作用域属性：</h2><p>使用@符号将本地作用域同DOM属性的值进行绑定。指令内部作用域可以使用外部作用域的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ (or @attr)</span><br></pre></td></tr></table></figure></p>
 <p>现在，可以在指令中使用绑定的字符串了。</p>
-<h2 id="双向绑定："><a href="#双向绑定：" class="headerlink" title="双向绑定："></a>双向绑定：</h2><p>通过=可以将本地作用域上的属性同父级作用域上的属性进行双向的数据绑定。就像普通的数据绑定一样，本地属性会反映出父数据模型中所发生的改变。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">= (or =attr)</span><br><span class="line">````　　</span><br><span class="line"></span><br><span class="line">## 父级作用域绑定</span><br><span class="line">通过&amp;符号可以对父级作用域进行绑定，以便在其中运行函数。意味着对这个值进行设置时会生成一个指向父级作用域的包装函数。</span><br><span class="line">要使调用带有一个参数的父方法，我们需要传递一个对象，这个对象的键是参数的名称，值是要传递给参数的内容。</span><br></pre></td></tr></table></figure></p>
-<p>&amp; (or &amp;attr)<br>````　</p>
+<h2 id="双向绑定："><a href="#双向绑定：" class="headerlink" title="双向绑定："></a>双向绑定：</h2><p>通过=可以将本地作用域上的属性同父级作用域上的属性进行双向的数据绑定。就像普通的数据绑定一样，本地属性会反映出父数据模型中所发生的改变。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">= (or =attr)</span><br></pre></td></tr></table></figure></p>
+<h2 id="父级作用域绑定"><a href="#父级作用域绑定" class="headerlink" title="父级作用域绑定"></a>父级作用域绑定</h2><p>通过&amp;符号可以对父级作用域进行绑定，以便在其中运行函数。意味着对这个值进行设置时会生成一个指向父级作用域的包装函数。<br>要使调用带有一个参数的父方法，我们需要传递一个对象，这个对象的键是参数的名称，值是要传递给参数的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp; (or &amp;attr)</span><br></pre></td></tr></table></figure></p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>@ 绑定策略只能绑定（或者理解成传递）字符串值。<br>要想传递方法(&amp;)或者实现双向数据绑定(=)等操作，就得需要使用其它两个绑定方式</p>
 
       
