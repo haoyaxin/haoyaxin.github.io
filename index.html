@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -201,6 +201,61 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-angularjs拷贝" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/angularjs拷贝/" class="article-date">
+  	<time datetime="2016-07-24T16:18:16.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/angularjs拷贝/">angularjs拷贝</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>内置两个方法：</p>
+<h2 id="angular-copy-source-destination"><a href="#angular-copy-source-destination" class="headerlink" title="angular.copy(source, destination)"></a>angular.copy(source, destination)</h2><p>深拷贝deep copy<br>两个指针指向完全不同的对象<br>mySource.obj === myDest.obj 会得到 false</p>
+<h2 id="angular-extend-destination-src1-src2-…"><a href="#angular-extend-destination-src1-src2-…" class="headerlink" title="angular.extend(destination, src1, src2 …)"></a>angular.extend(destination, src1, src2 …)</h2><p>浅拷贝 shallow copy<br>两个指针指向同一对象<br>mySource.obj === myDest.obj 会得到 true</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-angularjs推荐编程习惯" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -738,77 +793,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>天呐，好久没更新了！但是一直在学习是真的。。<br>默默的感觉年初定下的今年读多少本书的目标可以实现了= =要学的东西实在太多了，已经无法脱离咖啡生活了<br>但是博还是要更的，不然学的东西积累不下来=白学<br>啊啊不说了没时间了拜拜</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript中的this" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/JavaScript中的this/" class="article-date">
-  	<time datetime="2016-06-26T08:11:48.000Z" itemprop="datePublished">2016-06-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript中的this/">JavaScript中的this</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作为函数调用时，this 绑定到全局对象（window）；作为方法调用时，this 绑定到该方法所属的对象。<br>JavaScript 中函数的调用有以下几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，和使用 apply 或 call 调用。按照调用方式的不同，分别讨论 this 的含义。</p>
-<h2 id="作为对象方法调用"><a href="#作为对象方法调用" class="headerlink" title="作为对象方法调用"></a>作为对象方法调用</h2><p>this 绑定到该对象。</p>
-<h2 id="作为函数调用"><a href="#作为函数调用" class="headerlink" title="作为函数调用"></a>作为函数调用</h2><p>this 绑定到全局对象。</p>
-<h3 id="对于内部函数"><a href="#对于内部函数" class="headerlink" title="对于内部函数"></a>对于内部函数</h3><p>即声明在另外一个函数体内的函数，这种绑定到全局对象的方式会产生另外一个问题。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var point = &#123;</span><br><span class="line">x : 0,</span><br><span class="line">y : 0,</span><br><span class="line">moveTo : <span class="keyword">function</span>(x, y) &#123;</span><br><span class="line">    // 内部函数</span><br><span class="line">    var moveX = <span class="keyword">function</span>(x) &#123;</span><br><span class="line">    this.x = x;//this 绑定到了哪里？</span><br><span class="line">   &#125;;</span><br><span class="line">   // 内部函数</span><br><span class="line">   var moveY = <span class="keyword">function</span>(y) &#123;</span><br><span class="line">   this.y = y;//this 绑定到了哪里？</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">   moveX(x);</span><br><span class="line">   moveY(y);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line">point.moveTo(1, 1);</span><br><span class="line">point.x; //==&gt;0</span><br><span class="line">point.y; //==&gt;0</span><br><span class="line">x; //==&gt;1</span><br><span class="line">y; //==&gt;1</span><br></pre></td></tr></table></figure></p>
-<p>解决办法：<br>这属于 JavaScript 的设计缺陷，正确的设计方式是内部函数的 this 应该绑定到其外层函数对应的对象上，为了规避这一设计缺陷，聪明的 JavaScript 程序员想出了变量替代的方法，约定俗成，该变量一般被命名为 that。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var point = &#123;</span><br><span class="line">x : 0,</span><br><span class="line">y : 0,</span><br><span class="line">moveTo : <span class="keyword">function</span>(x, y) &#123;</span><br><span class="line">     var that = this;</span><br><span class="line">    // 内部函数</span><br><span class="line">    var moveX = <span class="keyword">function</span>(x) &#123;</span><br><span class="line">    that.x = x;</span><br><span class="line">    &#125;;</span><br><span class="line">    // 内部函数</span><br><span class="line">    var moveY = <span class="keyword">function</span>(y) &#123;</span><br><span class="line">    that.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    moveX(x);</span><br><span class="line">    moveY(y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">point.moveTo(1, 1);</span><br><span class="line">point.x; //==&gt;1</span><br><span class="line">point.y; //==&gt;1</span><br></pre></td></tr></table></figure></p>
-<h2 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h2><ol>
-<li>JavaScript 支持面向对象式编程，与主流的面向对象式编程语言不同，JavaScript 并没有类（class）的概念，而是使用基于原型（prototype）的继承方式。相应的，JavaScript 中的构造函数也很特殊，如果不使用 new 调用，则和普通函数一样。</li>
-<li>作为又一项约定俗成的准则，构造函数以大写字母开头，提醒调用者使用正确的方式调用。如果调用正确，this 绑定到新创建的对象上。</li>
-</ol>
-<h2 id="使用-apply-或-call-调用"><a href="#使用-apply-或-call-调用" class="headerlink" title="使用 apply 或 call 调用"></a>使用 apply 或 call 调用</h2><p>apply 和 call 就是函数对象的方法。这两个方法异常强大，他们允许切换函数执行的上下文环境（context），即 this 绑定的对象。</p>
-<h2 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h2><h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><p><a href="http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/" target="_blank" rel="external">Understanding JavaScript Function Invocation and “this”</a>;<br>在这篇文章里，Yehuda Katz 将 apply 或 call 方式作为函数调用的基本方式，其他几种方式都是在这一基础上的演变,不管函数以何种方式调用，均需完成这一绑定过程，不同的是，作为函数调用时，this 绑定到全局对象；作为方法调用时，this 绑定到该方法所属的对象。</p>
-<h3 id="函数的执行环境"><a href="#函数的执行环境" class="headerlink" title="函数的执行环境"></a>函数的执行环境</h3><p>JavaScript 中的函数既可以被当作普通函数执行，也可以作为对象的方法执行，这是导致 this 含义如此丰富的主要原因。<br>一个函数被执行时，会创建一个执行环境（ExecutionContext），函数的所有的行为均发生在此执行环境中.<br>JavaScript是怎样构建该执行环境的呢？</p>
-<ol>
-<li>首先会创建 arguments变量，其中包含调用函数时传入的参数。</li>
-<li>创建作用域链。</li>
-<li>然后初始化变量，<br>3.1 首先初始化函数的形参表，值为 arguments变量中对应的值，如果 arguments变量中没有对应值，则该形参初始化为 undefined。<br>3.2 如果该函数中含有内部函数，则初始化这些内部函数。<br>3.3 如果没有，继续初始化该函数内定义的局部变量，需要注意的是此时这些变量初始化为 undefined，其赋值操作在执行环境（ExecutionContext）创建成功后，函数执行时才会执行。<br>3.4 最后为 this变量赋值，如前所述，会根据函数调用方式的不同，赋给 this全局对象，当前对象等<br>至此函数的执行环境（ExecutionContext）创建成功，函数开始逐行执行，所需变量均从之前构建好的执行环境中读取。</li>
-</ol>
-<h3 id="call-apply-bind对比"><a href="#call-apply-bind对比" class="headerlink" title="call apply bind对比"></a>call apply bind对比</h3><p>首先理解bind方法：bind方法会创建一个新函数,称为绑定函数.当调用这个绑定函数时,绑定函数会以创建它时传入bind方法的第一个参数作为this,传入bind方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数.<br>好文 <a href="http://my.oschina.net/blogshi/blog/265415" target="_blank" rel="external">http://my.oschina.net/blogshi/blog/265415</a></p>
-<h3 id="eval-方法"><a href="#eval-方法" class="headerlink" title="eval 方法"></a>eval 方法</h3><p>JavaScript 中的 eval 方法可以将字符串转换为 JavaScript 代码，使用 eval 方法时，this 指向哪里呢？答案很简单，看谁在调用 eval 方法，调用者的执行环境（ExecutionContext）中的 this 就被 eval 方法继承下来了。</p>
 
       
     </div>

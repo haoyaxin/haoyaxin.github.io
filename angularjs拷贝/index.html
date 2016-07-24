@@ -4,39 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>《人人都是产品经理》 | Eyshine</title>
+  <title>angularjs拷贝 | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 互联网、软件行业特点： ① 行业形态：新兴行业；
- ② 产品形态与成本结构： 虚拟物品
- ③ 生命周期：几个月
- ④ 盈利模式：多元盈利
- ⑤ 用户心态：免费用
-2. 对产品经理的一般要求： ① 对市场发展趋势有敏锐的洞察力和创新意识及良好的分析、研判能力。
- ② 能够不断改进产品，深入了解业务，挖掘用户的多种需求，不断推出有竞争力的产品。
- ③ 指定所负责产品线的发展蓝图和实施路线图。">
+  <meta name="description" content="内置两个方法：
+angular.copy(source, destination)深拷贝deep copy两个指针指向完全不同的对象mySource.obj === myDest.obj 会得到 false
+angular.extend(destination, src1, src2 …)浅拷贝 shallow copy两个指针指向同一对象mySource.obj === myDest.obj 会">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《人人都是产品经理》">
-<meta property="og:url" content="http://haoyaxin.github.io/《人人都是产品经理》/index.html">
+<meta property="og:title" content="angularjs拷贝">
+<meta property="og:url" content="http://haoyaxin.github.io/angularjs拷贝/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="1. 互联网、软件行业特点： ① 行业形态：新兴行业；
- ② 产品形态与成本结构： 虚拟物品
- ③ 生命周期：几个月
- ④ 盈利模式：多元盈利
- ⑤ 用户心态：免费用
-2. 对产品经理的一般要求： ① 对市场发展趋势有敏锐的洞察力和创新意识及良好的分析、研判能力。
- ② 能够不断改进产品，深入了解业务，挖掘用户的多种需求，不断推出有竞争力的产品。
- ③ 指定所负责产品线的发展蓝图和实施路线图。">
-<meta property="og:updated_time" content="2016-06-06T15:29:07.000Z">
+<meta property="og:description" content="内置两个方法：
+angular.copy(source, destination)深拷贝deep copy两个指针指向完全不同的对象mySource.obj === myDest.obj 会得到 false
+angular.extend(destination, src1, src2 …)浅拷贝 shallow copy两个指针指向同一对象mySource.obj === myDest.obj 会">
+<meta property="og:updated_time" content="2016-07-24T16:21:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《人人都是产品经理》">
-<meta name="twitter:description" content="1. 互联网、软件行业特点： ① 行业形态：新兴行业；
- ② 产品形态与成本结构： 虚拟物品
- ③ 生命周期：几个月
- ④ 盈利模式：多元盈利
- ⑤ 用户心态：免费用
-2. 对产品经理的一般要求： ① 对市场发展趋势有敏锐的洞察力和创新意识及良好的分析、研判能力。
- ② 能够不断改进产品，深入了解业务，挖掘用户的多种需求，不断推出有竞争力的产品。
- ③ 指定所负责产品线的发展蓝图和实施路线图。">
+<meta name="twitter:title" content="angularjs拷贝">
+<meta name="twitter:description" content="内置两个方法：
+angular.copy(source, destination)深拷贝deep copy两个指针指向完全不同的对象mySource.obj === myDest.obj 会得到 false
+angular.extend(destination, src1, src2 …)浅拷贝 shallow copy两个指针指向同一对象mySource.obj === myDest.obj 会">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -222,11 +207,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-《人人都是产品经理》" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-angularjs拷贝" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/《人人都是产品经理》/" class="article-date">
-  	<time datetime="2016-06-06T15:26:01.000Z" itemprop="datePublished">2016-06-06</time>
+      <a href="/angularjs拷贝/" class="article-date">
+  	<time datetime="2016-07-24T16:18:16.000Z" itemprop="datePublished">2016-07-25</time>
 </a>
     </div>
   
@@ -239,7 +224,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      《人人都是产品经理》
+      angularjs拷贝
     </h1>
   
 
@@ -255,21 +240,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-互联网、软件行业特点："><a href="#1-互联网、软件行业特点：" class="headerlink" title="1. 互联网、软件行业特点："></a>1. 互联网、软件行业特点：</h2><p> ① 行业形态：新兴行业；</p>
-<p> ② 产品形态与成本结构： 虚拟物品</p>
-<p> ③ 生命周期：几个月</p>
-<p> ④ 盈利模式：多元盈利</p>
-<p> ⑤ 用户心态：免费用</p>
-<h2 id="2-对产品经理的一般要求："><a href="#2-对产品经理的一般要求：" class="headerlink" title="2. 对产品经理的一般要求："></a>2. 对产品经理的一般要求：</h2><p> ① 对市场发展趋势有敏锐的洞察力和创新意识及良好的分析、研判能力。</p>
-<p> ② 能够不断改进产品，深入了解业务，挖掘用户的多种需求，不断推出有竞争力的产品。</p>
-<p> ③ 指定所负责产品线的发展蓝图和实施路线图。<br><a id="more"></a><br> ④ 善于利用设计工具完成产品UC设计和Demo制作。</p>
-<p> ⑤ 发起产品研发项目，组织资源实施产品，对其效益负责。</p>
-<p> ⑥ 负责用户研究，把握用户需求，实现用户需求。</p>
-<h2 id="3-管理的能力"><a href="#3-管理的能力" class="headerlink" title="3. 管理的能力"></a>3. 管理的能力</h2><p>其实就是“在资源不足的情况下把事情做成”的能力。通常有以下几种形式：</p>
-<p> ① 信息不足以决策</p>
-<p> ② 时间不足以安排周密的计划</p>
-<p> ③ 人员不足以支持工作强度和难度</p>
-<p> ④ 资金不足以自由调配资源不足是常态。所以要学会分配资源，管理资源。</p>
+        <p>内置两个方法：</p>
+<h2 id="angular-copy-source-destination"><a href="#angular-copy-source-destination" class="headerlink" title="angular.copy(source, destination)"></a>angular.copy(source, destination)</h2><p>深拷贝deep copy<br>两个指针指向完全不同的对象<br>mySource.obj === myDest.obj 会得到 false</p>
+<h2 id="angular-extend-destination-src1-src2-…"><a href="#angular-extend-destination-src1-src2-…" class="headerlink" title="angular.extend(destination, src1, src2 …)"></a>angular.extend(destination, src1, src2 …)</h2><p>浅拷贝 shallow copy<br>两个指针指向同一对象<br>mySource.obj === myDest.obj 会得到 true</p>
 
       
     </div>
@@ -279,18 +252,9 @@
     
 <nav id="article-nav">
   
-    <a href="/Sketch3用户手册学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Sketch3用户手册学习
-        
-      </div>
-    </a>
   
-  
-    <a href="/《腾讯方法》——手游/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《腾讯方法》——手游</div>
+    <a href="/angularjs推荐编程习惯/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angularjs推荐编程习惯（持续更新）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
