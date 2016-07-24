@@ -4,21 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>angularjs字符插值 | Eyshine</title>
+  <title>angularjs指令directive的scope | Eyshine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="仅做基础解释，用法回头再补充
-字符串插值允许使用者 将变量引用直接插入处理过的字面字符中。如下例：12val name=&amp;quot;James&amp;quot;println(s&amp;quot;Hello,$name&amp;quot;)//Hello,James">
+  <meta name="description" content="所有的directives 都有自己的 scope 对象。 在默认的情况下，directive  不会创建他们自己的scope. 他们会用他们父对象的scope作为自己的scope.  但是 angularjs 允许改变这种默认行为。
+scope: false使用parent 的scope，默认例子
+scope: true创建一个新的scope,从parent controller 中的 scop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angularjs字符插值">
-<meta property="og:url" content="http://haoyaxin.github.io/angularjs字符插值/index.html">
+<meta property="og:title" content="angularjs指令directive的scope">
+<meta property="og:url" content="http://haoyaxin.github.io/angularjs指令scope/index.html">
 <meta property="og:site_name" content="Eyshine">
-<meta property="og:description" content="仅做基础解释，用法回头再补充
-字符串插值允许使用者 将变量引用直接插入处理过的字面字符中。如下例：12val name=&amp;quot;James&amp;quot;println(s&amp;quot;Hello,$name&amp;quot;)//Hello,James">
-<meta property="og:updated_time" content="2016-07-23T10:03:57.000Z">
+<meta property="og:description" content="所有的directives 都有自己的 scope 对象。 在默认的情况下，directive  不会创建他们自己的scope. 他们会用他们父对象的scope作为自己的scope.  但是 angularjs 允许改变这种默认行为。
+scope: false使用parent 的scope，默认例子
+scope: true创建一个新的scope,从parent controller 中的 scop">
+<meta property="og:updated_time" content="2016-07-24T05:26:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularjs字符插值">
-<meta name="twitter:description" content="仅做基础解释，用法回头再补充
-字符串插值允许使用者 将变量引用直接插入处理过的字面字符中。如下例：12val name=&amp;quot;James&amp;quot;println(s&amp;quot;Hello,$name&amp;quot;)//Hello,James">
+<meta name="twitter:title" content="angularjs指令directive的scope">
+<meta name="twitter:description" content="所有的directives 都有自己的 scope 对象。 在默认的情况下，directive  不会创建他们自己的scope. 他们会用他们父对象的scope作为自己的scope.  但是 angularjs 允许改变这种默认行为。
+scope: false使用parent 的scope，默认例子
+scope: true创建一个新的scope,从parent controller 中的 scop">
   
     <link rel="alternative" href="atom.xml" title="Eyshine" type="application/atom+xml">
   
@@ -204,11 +207,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-angularjs字符插值" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-angularjs指令scope" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/angularjs字符插值/" class="article-date">
-  	<time datetime="2016-07-23T10:02:14.000Z" itemprop="datePublished">2016-07-23</time>
+      <a href="/angularjs指令scope/" class="article-date">
+  	<time datetime="2016-07-24T05:19:53.000Z" itemprop="datePublished">2016-07-24</time>
 </a>
     </div>
   
@@ -221,7 +224,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      angularjs字符插值
+      angularjs指令directive的scope
     </h1>
   
 
@@ -237,8 +240,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>仅做基础解释，用法回头再补充</p>
-<p>字符串插值允许使用者 <strong>将变量引用直接插入处理过的字面字符中</strong>。如下例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val name=&quot;James&quot;</span><br><span class="line">println(s&quot;Hello,$name&quot;)//Hello,James</span><br></pre></td></tr></table></figure></p>
+        <p>所有的directives 都有自己的 scope 对象。 在默认的情况下，directive  不会创建他们自己的scope. 他们会用他们父对象的scope作为自己的scope.  但是 angularjs 允许改变这种默认行为。</p>
+<h2 id="scope-false"><a href="#scope-false" class="headerlink" title="scope: false"></a>scope: false</h2><p>使用parent 的scope，默认<br><a href="http://jsfiddle.net/od3a4ddw/9/" target="_blank" rel="external">例子</a></p>
+<h2 id="scope-true"><a href="#scope-true" class="headerlink" title="scope: true"></a>scope: true</h2><p>创建一个新的scope,从parent controller 中的 scope 对象继承，（子scope）。<br><a href="http://jsfiddle.net/od3a4ddw/10/" target="_blank" rel="external">例子</a></p>
+<h2 id="scope"><a href="#scope" class="headerlink" title="scope: {}"></a>scope: {}</h2><p>创建一个新的隔离scope,这个隔离的scope 不从parent scope对象继承<br><a href="http://jsfiddle.net/qggdk7gg/" target="_blank" rel="external">例子</a></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>子scope和隔离scope在运行起来很像，但是有区别。<br>子scope参数的初始化会因为继承的关系，从父scope的同名参数里继承下来<br>隔离scope因为是一个隔离的（独立的scope），所以即使跟包在外面的controller有同名的参数，也不会继承下来。</p>
 
       
     </div>
@@ -248,18 +254,9 @@
     
 <nav id="article-nav">
   
-    <a href="/angularjs指令scope/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          angularjs指令directive的scope
-        
-      </div>
-    </a>
   
-  
-    <a href="/angularjs中的绑定策略/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angularjs中的绑定策略</div>
+    <a href="/angularjs字符插值/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angularjs字符插值</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

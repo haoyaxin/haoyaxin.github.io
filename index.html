@@ -202,6 +202,63 @@
 
       <div class="body-wrap">
   
+    <article id="post-angularjs指令scope" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/angularjs指令scope/" class="article-date">
+  	<time datetime="2016-07-24T05:19:53.000Z" itemprop="datePublished">2016-07-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/angularjs指令scope/">angularjs指令directive的scope</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>所有的directives 都有自己的 scope 对象。 在默认的情况下，directive  不会创建他们自己的scope. 他们会用他们父对象的scope作为自己的scope.  但是 angularjs 允许改变这种默认行为。</p>
+<h2 id="scope-false"><a href="#scope-false" class="headerlink" title="scope: false"></a>scope: false</h2><p>使用parent 的scope，默认<br><a href="http://jsfiddle.net/od3a4ddw/9/" target="_blank" rel="external">例子</a></p>
+<h2 id="scope-true"><a href="#scope-true" class="headerlink" title="scope: true"></a>scope: true</h2><p>创建一个新的scope,从parent controller 中的 scope 对象继承，（子scope）。<br><a href="http://jsfiddle.net/od3a4ddw/10/" target="_blank" rel="external">例子</a></p>
+<h2 id="scope"><a href="#scope" class="headerlink" title="scope: {}"></a>scope: {}</h2><p>创建一个新的隔离scope,这个隔离的scope 不从parent scope对象继承<br><a href="http://jsfiddle.net/qggdk7gg/" target="_blank" rel="external">例子</a></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>子scope和隔离scope在运行起来很像，但是有区别。<br>子scope参数的初始化会因为继承的关系，从父scope的同名参数里继承下来<br>隔离scope因为是一个隔离的（独立的scope），所以即使跟包在外面的controller有同名的参数，也不会继承下来。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-angularjs字符插值" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -747,76 +804,6 @@
 </ol>
 <p><em>注意这只是小网站里比较常见的模型，大网站为了解决规模问题还会有很多处理，每个环节都会有一些细微的差异，中间还会使用各种各样的工具减轻服务器的压力，提高效率，方便日常维护~</em></p>
 <p>链接：<a href="https://www.zhihu.com/question/22689579/answer/22318058" target="_blank" rel="external">https://www.zhihu.com/question/22689579/answer/22318058</a><br>来源：知乎</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-浏览器渲染页面的过程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/浏览器渲染页面的过程/" class="article-date">
-  	<time datetime="2016-06-22T15:30:50.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/浏览器渲染页面的过程/">浏览器渲染页面的过程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2><ol>
-<li>浏览器解析html源码，然后创建一个 DOM树。</li>
-<li>浏览器解析CSS代码，计算出最终的样式数据。</li>
-<li>构建一个渲染树（rendering tree）。<br>渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素等。<br>一大段文本中的每一个行在渲染树中都是独立的一个节点。<br>渲染树中的每一个节点都存储有对应的css属性。</li>
-<li>浏览器就根据渲染树直接把页面绘制到屏幕上。</li>
-</ol>
-<h2 id="重绘和重排（repaints-and-reflows）"><a href="#重绘和重排（repaints-and-reflows）" class="headerlink" title="重绘和重排（repaints and reflows）"></a>重绘和重排（repaints and reflows）</h2><ol>
-<li>重排<br>就是渲染树的一部分必须要更新 并且节点的尺寸发生了变化。这就会触发重排操作。</li>
-<li>重绘<br>部分节点需要更新，但是没有改变他的集合形状，比如改变了背景颜色，这就会触发重绘。</li>
-</ol>
-<p><strong>下面任何操作都会触发重绘或者重排：</strong></p>
-<ul>
-<li>增加或删除DOM节点</li>
-<li>设置 display: none;（重排并重绘） 或者 visibility: hidden（只有重排）</li>
-<li>移动页面中的元素</li>
-<li>增加或者修改样式</li>
-<li>用户改变窗口大小，滚动页面等</li>
-</ul>
 
       
     </div>
