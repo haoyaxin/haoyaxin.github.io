@@ -202,6 +202,72 @@
 
       <div class="body-wrap">
   
+    <article id="post-angularjs推荐编程习惯" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/angularjs推荐编程习惯/" class="article-date">
+  	<time datetime="2016-07-24T05:29:22.000Z" itemprop="datePublished">2016-07-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/angularjs推荐编程习惯/">angularjs推荐编程习惯</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="在视图中通过对象属性，而非对象本身，来进行引用绑定"><a href="#在视图中通过对象属性，而非对象本身，来进行引用绑定" class="headerlink" title="在视图中通过对象属性，而非对象本身，来进行引用绑定"></a>在视图中通过对象属性，而非对象本身，来进行引用绑定</h3><p><em>解释：</em><br>JavaScript的对象有两种复制方式，值复制和引用复制。<br>值字面量（字符串、数字、布尔型）使用值复制。<br>引用字面量（数组、对象、函数）使用引用字面量<br>在父子scope中，如果出现同名或者是继承过来的变量，会分两种形式，所以需要进行注意。</p>
+<p><em>受此影响的内置指令有：</em></p>
+<ul>
+<li>ng-include</li>
+<li>ng-switch</li>
+<li>ng-repeat</li>
+<li>ng-view</li>
+<li>ng-controller</li>
+<li>ng-if</li>
+</ul>
+<h3 id="精简控制器controller"><a href="#精简控制器controller" class="headerlink" title="精简控制器controller"></a>精简控制器controller</h3><ul>
+<li>控制器不适合用来执行DOM操作、格式化或数据操作，以及除存储数据模型之外的状态维护操作。它只是视图和$scope之间的桥梁。</li>
+<li>设计良好的应用会将复杂的逻辑放在 <strong>指令和服务</strong> 中</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-angularjs指令scope" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -738,72 +804,6 @@
 </ol>
 <h3 id="call-apply-bind对比"><a href="#call-apply-bind对比" class="headerlink" title="call apply bind对比"></a>call apply bind对比</h3><p>首先理解bind方法：bind方法会创建一个新函数,称为绑定函数.当调用这个绑定函数时,绑定函数会以创建它时传入bind方法的第一个参数作为this,传入bind方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数.<br>好文 <a href="http://my.oschina.net/blogshi/blog/265415" target="_blank" rel="external">http://my.oschina.net/blogshi/blog/265415</a></p>
 <h3 id="eval-方法"><a href="#eval-方法" class="headerlink" title="eval 方法"></a>eval 方法</h3><p>JavaScript 中的 eval 方法可以将字符串转换为 JavaScript 代码，使用 eval 方法时，this 指向哪里呢？答案很简单，看谁在调用 eval 方法，调用者的执行环境（ExecutionContext）中的 this 就被 eval 方法继承下来了。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-网站访问过程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/网站访问过程/" class="article-date">
-  	<time datetime="2016-06-22T16:09:46.000Z" itemprop="datePublished">2016-06-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/网站访问过程/">网站访问过程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一个普通网站访问的过程"><a href="#一个普通网站访问的过程" class="headerlink" title="一个普通网站访问的过程"></a>一个普通网站访问的过程</h2><p>简单概括一下，对于我们普通的网站访问，涉及到的技术就是：</p>
-<ol>
-<li>用户操作浏览器访问，浏览器向服务器发出一个 HTTP 请求；</li>
-<li>服务器接收到 HTTP 请求，Web Server 进行相应的初步处理，使用服务器脚本生成页面；</li>
-<li>服务器脚本（利用Web Framework）调用本地和客户端传来的数据，生成页面；</li>
-<li>Web Server 将生成的页面作为 HTTP 响应的 body，根据不同的处理结果生成 HTTP header，发回给客户端；</li>
-<li>客户端（浏览器）接收到 HTTP 响应，通常第一个请求得到的 HTTP 响应的 body 里是 HTML 代码，于是对 HTML 代码开始解析；</li>
-<li>解析过程中遇到引用的服务器上的资源（额外的 CSS、JS代码，图片、音视频，附件等），再向 Web Server 发送请求，Web Server 找到对应的文件，发送回来；</li>
-<li>浏览器解析 HTML 包含的内容，用得到的 CSS 代码进行外观上的进一步渲染，JS 代码也可能会对外观进行一定的处理；</li>
-<li>用户与页面交互（点击，悬停等等）时，JS 代码对此作出一定的反应，添加特效与动画；</li>
-<li>交互的过程中可能需要向服务器索取或提交额外的数据（局部的刷新，类似微博的新消息通知），一般不是跳转就是通过 JS 代码（响应某个动作或者定时）向 Web Server 发送请求，Web Server 再用服务器脚本进行处理（生成资源or写入数据之类的），把资源返回给客户端，客户端用得到的资源来实现动态效果或其他改变。</li>
-</ol>
-<p><em>注意这只是小网站里比较常见的模型，大网站为了解决规模问题还会有很多处理，每个环节都会有一些细微的差异，中间还会使用各种各样的工具减轻服务器的压力，提高效率，方便日常维护~</em></p>
-<p>链接：<a href="https://www.zhihu.com/question/22689579/answer/22318058" target="_blank" rel="external">https://www.zhihu.com/question/22689579/answer/22318058</a><br>来源：知乎</p>
 
       
     </div>
